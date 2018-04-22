@@ -1,0 +1,7 @@
+version: '3'
+services:
+    gsite-cache-member:
+        image: ainguyen/gsite-cache-member
+        ports:
+            - 6000:6000
+

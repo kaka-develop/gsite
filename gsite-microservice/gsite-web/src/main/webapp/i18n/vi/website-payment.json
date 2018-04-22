@@ -1,0 +1,10 @@
+{
+    "webPayment" : {
+        "title": "Thanh toán trang web với:",
+        "cardType": "Loại thẻ",
+        "month": "Tháng",
+        "year": "Năm",
+        "purchase": "Thanh toán",
+        "cardNumber": "Số thẻ"
+    }
+}

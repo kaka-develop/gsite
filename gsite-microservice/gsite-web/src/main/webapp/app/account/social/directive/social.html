@@ -1,0 +1,6 @@
+<form action="{{ providerURL }}" method="POST">
+    <button type="submit" class="m-common-{{ provider }}-btn" md-ink-ripple>
+    </button>
+    <input name="scope" type="hidden" value="{{ providerSetting }}"/>
+    <input name="_csrf" type="hidden" value="{{ csrf }}"/>
+</form>

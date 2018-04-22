@@ -1,0 +1,18 @@
+{
+    "home": {
+        "title": "GSite",
+        "subtitle": "Gifts for someone",
+        "des": "Let's create awsome websites with GSite. You can give your websites to someone as the gifts. We support free web templates.",
+        "ftemplate": "Find templates",
+        "template": "Most Popular Templates",
+        "feature": {
+            "title": "Awsome Features",
+            "template": "View template",
+            "web": "Build website",
+            "share": "Share website",
+            "custom": "Customization",
+            "domain": "Sub domain",
+            "manage": "Management"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+<div layout-padding>
+    <div layout-padding class="md-whiteframe-1dp">
+        <span class="error-text" ng-show="vm.message">{{vm.message}}</span>
+        <form name="Form" layout="column" ng-submit="vm.save()">
+            <div layout="row">
+                <md-input-container flex>
+                    <label data-translate="global.form.username">Username</label>
+                    <input type="text" name="username" ng-minlength="4" ng-model="vm.user.login"
+                           ng-pattern="/^[a-zA-Z0-9]*$/" required/>
+                </md-input-container>
+                <md-input-container flex>
+                    <label data-translate="global.form.password">Password</label>
+                    <input type="password" name="password" ng-minlength="4" ng-model="vm.user.password" required/>
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container>
+                    <label data-translate="global.form.firstName">First Name</label>
+                    <input type="text" name="firstName" ng-minlength="3" ng-model="vm.user.firstName" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label data-translate="global.form.lastName">Last Name</label>
+                    <input type="text" name="lastName" ng-minlength="3" ng-model="vm.user.lastName" required/>
+                </md-input-container>
+            </div>
+            <md-input-container>
+                <label  data-translate="global.form.email">Email</label>
+                <input type="email" name="email" ng-model="vm.user.email" required/>
+            </md-input-container>
+            <md-input-container layout="row" layout-align="left center">
+                <div>
+                    <label  data-translate="usermanage.authority">Profile</label>
+                    <md-select ng-model="vm.choice">
+                        <md-option ng-repeat="item in vm.authorities" value="{{item}}">{{item}}</md-option>
+                    </md-select>
+                </div>
+                <div>
+                    <button type="button" ng-disabled="!Form.$valid" aria-label="Add"
+                            class="md-button md-raised md-primary md-icon-button" ng-click="vm.choose()">
+                        <md-icon class="material-icons">add</md-icon>
+                    </button>
+                </div>
+            </md-input-container>
+            <div layout="row" layout-align="left center" ng-repeat="item in vm.user.authorities">
+                <md-button aria-label="delete" class="md-icon-button" ng-click="vm.deleteChoice($index)">
+                    <md-icon class="material-icons"> clear</md-icon>
+                </md-button>
+                <span class="md-subhead m-1-line" flex>{{item}}</span>
+            </div>
+
+            <div layout="row">
+                <button type="submit" ng-disabled="!Form.$valid" class="md-button md-raised md-primary"  data-translate="global.form.save">Save</button>
+                <span flex></span>
+                <md-button ng-click="vm.closeDialog()" class="md-raised right"  data-translate="global.form.cancel">Cancel</md-button>
+            </div>
+
+        </form>
+    </div>
+</div>

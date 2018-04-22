@@ -1,0 +1,41 @@
+<div layout-padding>
+    <div layout-padding class="md-whiteframe-1dp">
+        <form name="Form" layout="column">
+            <md-input-container>
+                <label data-translate="global.form.name">Name</label>
+                <input type="text" name="name" ng-minlength="3" ng-model="vm.webTemplate.name" required/>
+            </md-input-container>
+            <div layout="row">
+                <md-input-container>
+                    <label data-translate="webTemplate.rating">Rating</label>
+                    <input type="number" name="rating" ng-model="vm.webTemplate.rating" min="1" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label data-translate="webTemplate.price">Price</label>
+                    <input type="number" name="rating" ng-model="vm.webTemplate.price" min="0" required/>
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container>
+                    <label data-translate="webTemplate.category">Category</label>
+                    <input type="text" name="name" ng-minlength="3" ng-model="vm.webTemplate.category" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label data-translate="webTemplate.source">Source</label>
+                    <md-select ng-model="vm.webTemplate.source" required>
+                        <md-option ng-repeat="item in vm.sources" value="{{item}}">{{item}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+
+
+            <div layout="row">
+                <md-button ng-click="vm.save()" ng-disabled="!Form.$valid" class="md-raised md-primary" data-translate="global.form.save">Save</md-button>
+                <span flex></span>
+                <md-button ng-click="vm.closeDialog()" class="md-raised right" data-translate="global.form.cancel">Cancel</md-button>
+            </div>
+
+        </form>
+    </div>
+</div>

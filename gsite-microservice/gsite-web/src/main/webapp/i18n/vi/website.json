@@ -1,0 +1,24 @@
+{
+    "website": {
+        "title": "Trang web",
+        "user": "Người dùng",
+        "template": "Trang mẫu",
+        "subdomain": "Tên miền",
+        "error": {
+            "subdomain": "Tên miền này đã tồn tại!"
+        },
+        "custom": {
+            "basicInfo": "Thông tin",
+            "song": "Bài hát",
+            "photo": "Ảnh",
+            "homepage": "Trang chính",
+            "toolbar": "Thanh menu",
+            "sidenav": "Thanh bên",
+            "uploadSong": "Đăng bài hát",
+            "uploadPhoto": "Đăng ảnh"
+        },
+        "customcomponent": "Thành phần tuỳ chỉnh",
+        "sharedUsers": "Người được chia sẻ",
+        "info": "Thông tin trang web"
+    }
+}

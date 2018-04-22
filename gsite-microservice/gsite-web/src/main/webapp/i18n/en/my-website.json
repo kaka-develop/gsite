@@ -1,0 +1,22 @@
+{
+    "myWebsite" : {
+        "name": "Name",
+        "created": "Created",
+        "template": "Template",
+        "subdomain": "Sub domain",
+        "custom": {
+            "basicDetail": "Basic details",
+            "customization": "Customization",
+            "basicInfo": "Basic info",
+            "song": "Songs",
+            "photo": "Photos",
+            "homepage": "Homepage",
+            "toolbar": "Toolbar",
+            "sidenav": "Sidenav",
+            "uploadSong": "Upload song",
+            "uploadPhoto": "Upload photo",
+            "textColor": "Text color",
+            "backgroundColor": "Background color"
+        }
+    }
+}

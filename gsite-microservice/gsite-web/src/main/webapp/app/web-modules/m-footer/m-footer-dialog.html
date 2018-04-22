@@ -1,0 +1,33 @@
+<md-card>
+    <md-card-content>
+        <p hide-xs class="md-title">Edit footer</p>
+        <form name="Form" layout-fill>
+            <md-input-container layout-fill>
+                <label>Title</label>
+                <input ng-model="vm.item.title" type="text" ng-required="true">
+            </md-input-container>
+
+            <md-input-container layout-fill>
+                <label>URL</label>
+                <input ng-model="vm.item.url" type="text" ng-required="true">
+            </md-input-container>
+            <md-input-container layout-fill layout="row">
+
+                <div>
+                    <button type="submit" aria-label="Add" class="md-button md-raised md-primary md-icon-button">
+                        <md-icon class="material-icons">add</md-icon>
+                    </button>
+                </div>
+                <div>
+                    <div layout="row" layout-align="left center" ng-repeat="item in vm.footer.items">
+                    <md-button aria-label="delete" class="md-icon-button" ng-click="vm.deleteItem($index)">
+                        <md-icon class="material-icons"> clear</md-icon>
+                    </md-button>
+                    <span class="md-subhead m-1-line" flex>{{item.title}}</span>
+                </div>
+                </div>
+            </md-input-container>
+
+        </form>
+    </md-card-content>
+</md-card>

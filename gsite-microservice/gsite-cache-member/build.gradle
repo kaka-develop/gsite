@@ -1,0 +1,52 @@
+import groovy.json.JsonSlurper
+import org.gradle.internal.os.OperatingSystem
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
+	}
+}
+
+apply plugin: 'java'
+version = '1.0'
+sourceCompatibility = 1.8
+
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+apply from: 'gradle/docker.gradle'
+
+
+defaultTasks 'bootRun'
+
+bootRepackage {
+	mainClass = 'com.gsite.app.GsiteCacheManagerApplication'
+}
+
+war {
+
+}
+
+springBoot {
+	mainClass = 'com.gsite.app.GsiteCacheManagerApplication'
+	executable = true
+}
+
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile "com.hazelcast:hazelcast:${hazelcast_version}"
+	compile "com.hazelcast:hazelcast-spring:${hazelcast_version}"
+	compile "org.springframework.boot:spring-boot-starter-actuator"
+	compile "org.springframework.boot:spring-boot-starter-cache"
+	compile "org.springframework.boot:spring-boot-starter-web"
+	testCompile "org.springframework.boot:spring-boot-starter-test"
+}

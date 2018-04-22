@@ -1,0 +1,13 @@
+{
+    "login": {
+        "title": "Sign in",
+        "form": {
+            "username": "Username",
+            "password": "Password",
+            "forgot": "Did you forget your password?",
+            "rememberme": "Remember me",
+            "submit": "Login",
+            "register": "Sign up"
+        }
+    }
+}

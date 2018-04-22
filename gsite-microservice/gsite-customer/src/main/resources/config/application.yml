@@ -1,0 +1,84 @@
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 10000
+
+management:
+    security:
+        roles: ADMIN
+    context-path: /management
+    health:
+        mail:
+            enabled: true
+
+spring:
+    application:
+        name: gsiteCustomer
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+    cache:
+        type: hazelcast
+
+security:
+    basic:
+        enabled: false
+
+server:
+    session:
+        cookie:
+            http-only: true
+
+info:
+    project:
+        version: 1.0
+
+payment:
+    paypal:
+        mode: sandbox
+        clientId: AdkvG3h4tvfBNJBihi9KnccOdROGu_W8AgZEcWcfkyV4H1fxHBA7ewcApiYITAcvUuK19mdlBCUMridu
+        clientSecret: EFp1Xx_TteLv48GnOB25Azm-Ts8_9lpqCaXQ5HytqElxi_jUQu_b_Qn194XwX8E9eNcCWcXvMQ5WOJck
+        cancelUrl: http://localhost:8080/website-payment/
+        returnUrl: http://localhost:8080/website-payment/
+
+storage:
+    url:
+        image: /
+
+application:
+    async:
+        core-pool-size: 2
+        max-pool-size: 50
+        queue-capacity: 10000
+
+    mail:
+        from: gsiteCustomer@localhost
+    swagger:
+        default-include-pattern: /api/.*
+        title: gsiteCustomer API
+        description: gsiteCustomer API documentation
+        version: 0.0.1
+        terms-of-service-url:
+        contact-name:
+        contact-url:
+        contact-email:
+        license:
+        license-url:
+    ribbon:
+        display-on-active-profiles: dev
+    cache:
+        hazelcast:
+            group-name: gname
+            group-pass: gpass
+            network:
+                address: 127.0.0.1

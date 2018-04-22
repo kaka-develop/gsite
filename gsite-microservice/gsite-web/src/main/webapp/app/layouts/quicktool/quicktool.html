@@ -1,0 +1,34 @@
+ <md-fab-speed-dial md-direction="up" class="md-scale md-fab-bottom-right m-quicktool">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                    <md-icon class="material-icons">add</md-icon>
+                </md-button>
+            </md-fab-trigger>
+
+            <md-fab-actions>
+                <div>
+                    <md-button ui-sref="my-website.new" class="md-fab md-raised md-mini md-primary">
+                        <md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+                            <span data-translate="global.quicktool.web"> Website</span>
+                        </md-tooltip>
+                        <md-icon class="material-icons">web</md-icon>
+                    </md-button>
+                </div>
+                <div>
+                    <md-button ui-sref="my-question.new" class="md-fab md-raised md-mini md-primary">
+                        <md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+                            <span data-translate="global.quicktool.question"> Question</span>
+                        </md-tooltip>
+                        <md-icon class="material-icons"> question_answer </md-icon>
+                    </md-button>
+                </div>
+                <div>
+                    <md-button ui-sref="my-feedback.new" class="md-fab md-raised md-mini md-primary">
+                        <md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+                            <span data-translate="global.quicktool.feedback"> Feedback</span>
+                        </md-tooltip>
+                        <md-icon class="material-icons"> feedback </md-icon>
+                    </md-button>
+                </div>
+            </md-fab-actions>
+        </md-fab-speed-dial>

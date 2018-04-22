@@ -1,0 +1,21 @@
+@media only screen and (min-width: 1280px) {
+  .m-features {
+    width: 965px; }
+  .m-custom-sidenav {
+    width: 300px;
+    height: 100vh; }
+    .m-custom-sidenav .m-sidenav-header {
+      height: 180px; }
+    .m-custom-sidenav md-content {
+      margin-right: 5px; }
+  .m-beautiful-template-style .m-common-content-item {
+    width: 80%; }
+  .m-beautiful-template-style .m-template-home-avatar {
+    width: 90%;
+    height: 360px; }
+  .m-beautiful-template-style .m-template-song-panel {
+    width: 80%; }
+  .m-beautiful-template-style .m-photo-beautiful-form .m-common-content-item {
+    width: 70%; }
+    .m-beautiful-template-style .m-photo-beautiful-form .m-common-content-item img {
+      height: 200px; } }

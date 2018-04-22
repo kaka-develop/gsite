@@ -1,0 +1,14 @@
+{
+    "myFeedback" : {
+        "title": "Feedback",
+        "criteria": "Criteria",
+        "option": {
+            "speed": "Speed",
+            "accuracy": "Accuracy",
+            "usability": "Usability",
+            "good": "Quite good and easy!",
+            "normal": "Not good enough!",
+            "bad": "Have some problems!"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+
+spring:
+    application:
+        name: gsiteCustomer
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    data:
+        mongodb:
+            host: localhost
+            port: 27117
+            database: gsiteCustomer
+    mail:
+        host: localhost
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+
+liquibase:
+    contexts: test
+
+security:
+    basic:
+        enabled: false
+
+server:
+    port: 10344
+    address: localhost
+
+payment:
+    paypal:
+        mode: sandbox
+        clientId: ATmfnJTpXRBIu9wwaUoEKjj6alLPhdhL4zKVmK5HgpDZkGbs8Z1Pna_j_ct5_2DkS8mlQ3bo2V9tk_dr
+        clientSecret: EIZoxGT6GpHop3JoxsXwvyS-UiGL4yaTwF-aB4XtQ89xy-XkbEn8RpYPSOM_rrL5B_eNriTyIOtVOutq
+        cancelUrl: http://localhost:8080/website-payment/
+        returnUrl: http://localhost:8080/website-payment/
+
+application:
+    async:
+        core-pool-size: 2
+        max-pool-size: 50
+        queue-capacity: 10000
+    security:
+        authentication:
+            jwt:
+                secret: 0323012e6720cff72fa5efc6af8c2f7753c3c4fa
+                token-validity-in-seconds: 86400
+    metrics:
+        jmx.enabled: true

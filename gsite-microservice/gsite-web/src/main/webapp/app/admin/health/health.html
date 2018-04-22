@@ -1,0 +1,33 @@
+<div layout="row" layout-align="start center">
+    <h2 data-translate="health.title">
+        Health Checks</h2>
+    <md-button class="md-icon-button md-raised md-primary" ng-click="vm.refresh()">
+        <i class="material-icons">refresh</i>
+    </md-button>
+</div>
+
+<table id="healthCheck" layout-fill>
+    <thead>
+        <tr>
+            <th class="col-md-7" data-translate="health.table.service">Service Name</th>
+            <th class="col-md-2 text-center" data-translate="health.table.status">Status</th>
+            <th class="col-md-2 text-center" data-translate="health.details.details">Details</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="health in vm.healthData">
+            <td>{{'health.indicator.' + vm.baseName(health.name) | translate}} {{vm.subSystemName(health.name)}}</td>
+            <td class="text-center">
+                <span ng-class="vm.getLabelClass(health.status)">
+                        {{'health.status.' + health.status | translate}}
+                    </span>
+            </td>
+            <td class="text-center">
+                <md-button aria-label="button-label" class="md-icon-button md-primary" ng-click="vm.showHealth(health)" ng-show="health.details || health.error">
+                   <i class="material-icons">remove_red_eye</i>
+                </md-button>
+            </td>
+        </tr>
+    </tbody>
+</table>

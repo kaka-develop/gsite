@@ -1,0 +1,67 @@
+zuul:
+    host:
+        connect-timeout-millis: 5000
+        socket-timeout-millis: 10000
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 10000
+
+management:
+    security:
+        roles: ADMIN
+    context-path: /management
+    health:
+        mail:
+            enabled: false
+
+spring:
+    application:
+        name: gsiteWeb
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    cache:
+        type: none
+    data:
+        mongodb:
+            host: localhost
+            port: 27117
+            database: gsiteWeb
+
+    mail:
+        host: localhost
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+
+liquibase:
+    contexts: test
+
+security:
+    basic:
+        enabled: false
+
+server:
+    port: 10344
+    address: localhost
+
+application:
+    async:
+        core-pool-size: 2
+        max-pool-size: 50
+        queue-capacity: 10000
+    security:
+        authentication:
+            jwt:
+                secret: 4b27555cf435f97f9b1ab9cd8b1b597b4382a831
+                token-validity-in-seconds: 86400
+    metrics:
+        jmx.enabled: true

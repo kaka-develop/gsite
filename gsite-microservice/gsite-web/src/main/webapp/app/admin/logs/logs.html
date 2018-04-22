@@ -1,0 +1,41 @@
+<h2 data-translate="logs.title">
+    Logs</h2>
+
+<span data-translate="logs.nbloggers" translate-values="{total: '{{ vm.loggers.length }}'}">There are {{ vm.loggers.length }} loggers.</span>
+
+<p data-translate="logs.filter">Filter</p>
+<div class="m-content">
+    <md-input-container class="md-icon-float md-block">
+        <label>Enter filter</label>
+        <md-icon class="material-icons">spellcheck</md-icon>
+        <input type="text" name="filter" ng-model="filter" />
+    </md-input-container>
+</div>
+
+<div layout-fill layout="column">
+    <md-content>
+        <table layout-fill>
+            <thead>
+                <tr title="click to order">
+                    <th ng-click="predicate = 'level'; reverse=!reverse"><span data-translate="logs.table.level">Level</span></th>
+                    <th ng-click="predicate = 'name'; reverse=!reverse"><span data-translate="logs.table.name">Name</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="logger in vm.loggers | filter:filter | orderBy:predicate:reverse">
+                    <td>
+                        <div layout="row" layout-align="center center">
+                            <button class="m-normal-text" hide-xs hide-sm ng-click="vm.changeLevel(logger.name, 'TRACE')" ng-class="(logger.level=='TRACE') ? 'bg-danger' : 'bg-default'">TRACE</button>
+                            <button ng-click="vm.changeLevel(logger.name, 'DEBUG')" ng-class="(logger.level=='DEBUG') ? 'bg-warning' : 'bg-default'">DEBUG</button>
+                            <button hide-xs ng-click="vm.changeLevel(logger.name, 'INFO')" ng-class="(logger.level=='INFO') ? 'bg-info' : 'bg-default'">INFO</button>
+                            <button hide-xs hide-sm ng-click="vm.changeLevel(logger.name, 'WARN')" ng-class="(logger.level=='WARN') ? 'bg-success' : 'bg-default'">WARN</button>
+                            <button ng-click="vm.changeLevel(logger.name, 'ERROR')" ng-class="(logger.level=='ERROR') ? 'bg-primary' : 'bg-default'">ERROR</button>
+                        </div>
+                    </td>
+                    <td><small>{{logger.name | characters:140}}</small></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </md-content>
+</div>

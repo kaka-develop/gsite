@@ -1,0 +1,19 @@
+<md-card class="m-template-home-dialog">
+    <md-card-content>
+        <form name="Form" layout="column">
+            <md-input-container layout-fill>
+                <label data-translate="global.form.name">Name</label>
+                <input type="text" name="name" ng-minlength="3" ng-model="vm.homepage.name" required/>
+            </md-input-container>
+            <md-input-container layout-fill>
+                <label data-translate="global.form.fullName">Full name</label>
+                <input type="text" name="fullName" ng-minlength="3" ng-model="vm.homepage.fullName" required/>
+            </md-input-container>
+            <md-input-container layout-fill layout="row" layout-align="left center" >
+                 <button type="button" ng-disabled="vm.loading" class="button md-button md-primary" ngf-select="vm.upload($file)" ng-model="vm.mainImageFile" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" data-translate="myWebsite.custom.uploadPhoto">Upload photo</button>
+                <img ng-show="vm.mainImageFile" ngf-thumbnail="vm.mainImageFile">
+                <img ng-show="vm.homepage.tempImageLink" ng-src="{{vm.homepage.tempImageLink}}" >
+            </md-input-container>
+        </form>
+    </md-card-content>
+</md-card>

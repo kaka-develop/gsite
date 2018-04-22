@@ -1,0 +1,13 @@
+{
+    "login": {
+        "title": "Đăng nhập",
+        "form": {
+            "username": "Tên tài khoản",
+            "password": "Mật khẩu",
+            "rememberme": "Nhớ tài khoản",
+            "forgot": "Bạn quên mật khẩu?",
+            "submit": "Đăng nhập",
+            "register": "Đăng ký"
+        }
+    }
+}

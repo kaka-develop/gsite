@@ -1,0 +1,27 @@
+{
+    "template": {
+        "menu": {
+            "home": "Trang chủ",
+            "info": "Thông tin",
+            "photos": "Ảnh",
+            "songs": "Bài hát"
+        },
+        "favor": {
+            "songs": "Bài hát yêu thích",
+            "photos": "Ảnh yêu thích"
+        },
+        "info": {
+            "title": "Thông tin cơ bản",
+            "fname": "Tên: ",
+            "lname": "Họ: ",
+            "age": "Tuổi: ",
+            "overview": "Tổng quan: ",
+            "email": "Địa chỉ email: "
+        },
+        "footer": {
+            "english": "Tiếng anh",
+            "vietnam": "Tiếng việt"
+        }
+    }
+}
+

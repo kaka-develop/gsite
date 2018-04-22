@@ -1,0 +1,21 @@
+spring:
+    cache:
+        type: hazelcast
+    main:
+        web-environment: false
+
+
+server:
+    port: 6000
+
+application:
+    cache:
+        hazelcast:
+              group-name: gname
+              group-pass: gpass
+              network:
+                  enabled-multicast: true
+              management-center:
+                  enable: false
+                  update-interval: 3
+                  url: http://gsite-cache-member:6000/mancenter

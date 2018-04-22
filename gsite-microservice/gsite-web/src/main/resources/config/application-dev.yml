@@ -1,0 +1,65 @@
+
+spring:
+    profiles:
+        active: dev
+        include: swagger
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false
+    jackson:
+        serialization.indent_output: true
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: gsite
+
+    messages:
+        cache-seconds: 1
+    thymeleaf:
+        cache: false
+
+
+server:
+    port: 8080
+
+
+application:
+    gateway:
+        authorized-microservices-endpoints:
+            app1: /api,/v2/api-docs
+            gsitemanager: /api,/v2/api-docs
+            gsitecustomer: /api,/v2/api-docs
+    http:
+        version: V_1_1
+    security:
+        authentication:
+            jwt:
+                secret: my-secret-token-to-change-in-production
+                token-validity-in-seconds: 86400
+                token-validity-in-seconds-for-remember-me: 2592000
+    mail:
+        from: gsite@localhost
+        base-url: http://localhost:8080
+    metrics:
+        jmx.enabled: true
+        graphite:
+            enabled: false
+            host: localhost
+            port: 2003
+            prefix: gsite
+        prometheus:
+            enabled: false
+            endpoint: /prometheusMetrics
+        logs:
+            enabled: false
+            reportFrequency: 60
+    logging:
+        logstash:
+            enabled: false
+            host: localhost
+            port: 5000
+            queue-size: 512
+        spectator-metrics:
+            enabled: false

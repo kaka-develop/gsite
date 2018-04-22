@@ -1,0 +1,20 @@
+<md-toolbar class="md-hue-2 m-template-toolbar">
+    <div class="md-toolbar-tools" layout-gt-sm="row">
+        <md-button class="md-icon-button m-sidenav-togger" ng-click="vm.toggleLeft()" aria-label="Settings">
+            <md-icon style="color: {{vm.toolbar.textColor}}" class="material-icons">menu</md-icon>
+        </md-button>
+        <!--<div flex="5" layout="row" layout-align="center center">
+            <img  class="m-person-avatar" ng-src="content/images/other/avatar.jpg" class="md-avatar" />
+        </div>-->
+        <h2>
+            <span style="color: {{vm.toolbar.textColor}}">{{vm.toolbar.title}}</span>
+        </h2>
+        <span flex></span>
+        <div hide-xs hide-sm >
+            <md-button class="m-normal-text" aria-label="Home" ui-sref="{{vm.homeState}}" data-translate="template.menu.home"> Home </md-button>
+            <md-button class="m-normal-text"  ui-sref="{{vm.homeState + '.info'}}" data-translate="template.menu.info" ng-show="vm.website.custom.basicInfo.isEnable">Information</md-button>
+            <md-button class="m-normal-text"  ui-sref="{{vm.homeState + '.photo'}}" data-translate="template.menu.photos" ng-show="vm.website.custom.photo.isEnable">Photos</md-button>
+            <md-button class="m-normal-text"  ui-sref="{{vm.homeState + '.song'}}" data-translate="template.menu.songs" ng-show="vm.website.custom.song.isEnable">Songs</md-button>
+        </div>
+    </div>
+</md-toolbar>

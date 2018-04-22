@@ -1,0 +1,9 @@
+{
+    "notification": {
+        "title": "Thông báo",
+        "content": "Nội dung",
+        "user": "Người dùng",
+        "info": "Thông tin chi tiết",
+        "sentUsers": "Người nhận"
+    }
+}

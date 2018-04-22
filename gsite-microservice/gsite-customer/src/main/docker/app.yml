@@ -1,0 +1,16 @@
+version: '3'
+services:
+    gsitecustomer-app:
+        image: ainguyen/gsite-micro-customer
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://gsitecustomer-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=gsiteManager
+        ports:
+            - 8081:8081
+        depends_on:
+            - gsitecustomer-mongodb
+    gsitecustomer-mongodb:
+        image: mongo:3.2.10
+        ports:
+            - 27017:27017

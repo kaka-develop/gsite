@@ -1,0 +1,112 @@
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    timeout:
+                        enabled: false
+                    thread:
+                        timeoutInMilliseconds: 10000
+
+zuul:
+    host:
+        connect-timeout-millis: 10000
+        socket-timeout-millis: 10000
+    routes:
+        gsitemanager:
+            path: /gsitemanager/**
+            serviceId: gsitemanager
+        gsitecustomer:
+            path: /gsitecustomer/**
+            serviceId: gsitecustomer
+
+ribbon:
+    eureka:
+        enabled: false
+
+gsitemanager:
+    ribbon:
+        ReadTimeout: 10000
+        ConnectTimeout: 10000
+        listOfServers: localhost:8082
+
+
+gsitecustomer:
+    ribbon:
+        ReadTimeout: 10000
+        ConnectTimeout: 10000
+        listOfServers: localhost:8081
+
+management:
+    security:
+        roles: ADMIN
+    context-path: /management
+    health:
+        mail:
+            enabled: false
+
+spring:
+    application:
+        name: gsite
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: giftsiteforyou@gmail.com
+        password: gsite.system
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
+    social:
+        google:
+            clientId: 1013279057915-011ku3rgml86rk9878i1korg82fs5rdi.apps.googleusercontent.com
+            clientSecret: zGJd-pCSMIWLNUZV7VevJKld
+        facebook:
+            clientId: 940460799422307
+            clientSecret: ec8a1fb5c9bc3d102748929f6f4dbb53
+        twitter:
+            clientId: TIUAr6TEk1sFpAKnVsAcOoPjl
+            clientSecret: nlRr3spZodHp1u0JfFxwirlcbDcvgesRTINoez07vthk5mnFTQ
+
+security:
+    basic:
+        enabled: false
+
+storage:
+    url:
+        image: /
+
+application:
+    async:
+        core-pool-size: 2
+        max-pool-size: 50
+        queue-capacity: 10000
+
+    mail:
+        from: gsite@localhost
+    swagger:
+        default-include-pattern: /api/.*
+        title: gsite API
+        description: gsite API documentation
+        version: 0.0.1
+        terms-of-service-url:
+        contact-name:
+        contact-url:
+        contact-email:
+        license:
+        license-url:
+    social:
+            redirectAfterSignIn: "/social-auth"
+    ribbon:
+        display-on-active-profiles: dev

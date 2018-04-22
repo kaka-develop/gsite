@@ -1,0 +1,14 @@
+{
+    "myFeedback" : {
+        "title": "Phản hồi",
+        "criteria": "Tiêu chí",
+        "option": {
+            "speed": "Tốc độ",
+            "accuracy": "Chính xác",
+            "usability": "Sử dụng",
+            "good": "Khá tốt và dễ dàng!",
+            "normal": "Không tốt lắm!",
+            "bad": "Có một số vấn đề!"
+        }
+    }
+}

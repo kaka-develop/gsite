@@ -1,0 +1,18 @@
+{
+    "home": {
+        "title": "GSite",
+        "subtitle": "Quà tặng cho một người nào đó",
+        "des": "Hãy tạo những trang web thật tuyệt với GSite. Bạn có thể tặng chúng cho người khác. Chúng tôi cung cấp những trang mẫu miễn phí.",
+        "ftemplate": "Tìm trang mẫu",
+        "template": "Trang mẫu phổ biến",
+        "feature": {
+            "title": "Tính năng hay",
+            "template": "Xem trang ",
+            "web": "Tạo trang web",
+            "share": "Chia sẻ",
+            "custom": "Tuỳ chỉnh",
+            "domain": "Tên miền",
+            "manage": "Quản lý"
+        }
+    }
+}
