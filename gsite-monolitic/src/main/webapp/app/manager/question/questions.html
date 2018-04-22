@@ -1,0 +1,41 @@
+<h2 data-translate="question.title">Questions</h2>
+<div>
+    <table layout-fill>
+        <thead>
+        <tr>
+            <th>
+                <md-button ui-sref="question.new" class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">add</i>
+                </md-button>
+            </th>
+            <th hide-xs hide-gt-xs><span data-translate="global.form.id">ID</span></th>
+            <th><span data-translate="question.content">Content</span></th>
+            <th hide-xs hide-sm><span data-translate="question.answer">Answer</span></th>
+            <th hide-xs><span data-translate="global.form.created">Created</span></th>
+        </tr>
+        </thead>
+        <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+        <tr ng-repeat="question in vm.questions track by question.id">
+            <td>
+                <div class="m-item-actions" layout="row" layout-align="start center">
+                    <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-warn"
+                               ui-sref="question.delete({id: question.id})">
+                        <i class="material-icons">delete</i>
+                    </md-button>
+                    <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-primary"
+                               ui-sref="question.edit({id: question.id})">
+                        <i class="material-icons">edit</i>
+                    </md-button>
+                    <md-button class="md-icon-button md-raised md-primary" ui-sref="question.detail({id:question.id})">
+                        <i class="material-icons">remove_red_eye</i>
+                    </md-button>
+                </div>
+            </td>
+            <td hide-xs hide-gt-xs><a ui-sref="question-detail({id:question.id})">{{question.id}}</a></td>
+            <td>{{question.content}}</td>
+            <td hide-xs hide-sm>{{question.answer}}</td>
+            <td hide-xs>{{question.created | date:'medium'}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

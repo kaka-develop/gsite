@@ -1,0 +1,30 @@
+<div class="m-common-toolbar">
+</div>
+
+<div class="m-common-panel md-whiteframe-1dp" layout="column" layout-align="center center">
+    <h1 data-translate="reset.request.title">Reset your password</h1>
+
+    <div data-translate="reset.request.messages.notfound" layout="column" layout-align="center center">
+        <strong class="error-text">E-Mail address isn't registered!</strong>
+        <p>Please check and try again.</p>
+    </div>
+    <div>
+        <p data-translate="reset.request.messages.success">Please check your e-mails.</p>
+    </div>
+    <div>
+        <p data-translate="reset.request.messages.info">Enter the e-mail address you used to register.</p>
+    </div>
+
+    <form name="Form">
+        <md-input-container layout-fill>
+            <label>Email</label>
+            <input type="email" name="email" ng-model="vm.user.username" minlength="2" required/>
+        </md-input-container>
+
+        <div layout="row" layout-fill>
+            <md-button ng-disabled="!Form.$valid" ng-click="vm.submit() || vm.closeLoginDialog()" class="md-raised md-primary">Reset</md-button>
+            <span flex></span>
+            <md-button ui-sref="register" ng-click="vm.cancel()" class="md-raised right">Cancel</md-button>
+        </div>
+    </form>
+</div>

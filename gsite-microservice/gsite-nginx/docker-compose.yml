@@ -1,0 +1,48 @@
+version: '3'
+services:
+  gsite-nginx:
+    image: ainguyen/gsite-nginx
+    ports:
+        - 80:80
+    networks:
+        - gsite-app
+        - tools_default
+    deploy:
+        restart_policy:
+            condition: on-failure 
+        placement:
+            constraints: [node.hostname == google-manager1]            
+  # gsite-nginx:
+  #   image: nginx:1.11-alpine
+  #   volumes:
+  #     - /usr/share/nginx/html
+  #     - /etc/nginx/nginx.conf
+  #     - /usr/share/certs
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   networks:
+  #           - gsite-app
+  #           - tools_default
+  #   depends_on:
+  #     - gsite-registry
+  #   deploy:
+  #     placement:
+  #         constraints: [node.hostname == google-manager2] 
+  # gsite-registry:
+  #   image: registry
+  #   ports: 
+  #     - 5000:5000
+  #   volumes:
+  #     - /root/reg-data:/var/lib/registry
+  #   networks:
+  #           - gsite-app
+  #   deploy:
+  #     placement:
+  #         constraints: [node.hostname == google-manager2]
+    
+networks:
+    gsite-app:
+       external: true
+    tools_default:
+        external: true

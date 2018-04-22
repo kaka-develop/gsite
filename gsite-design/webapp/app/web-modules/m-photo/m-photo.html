@@ -1,0 +1,29 @@
+<div class="m-template-photo">
+    <div class="m-photo-normal-form" layout="column" layout-align="center center">
+        <div class="m-common-content-item" layout-padding layout="column" layout-align="center center" ng-repeat="item in vm.photo.items">
+            <img ng-src="{{item.url}}" />
+            <div>
+                <md-button aria-label="button-label" class="md-icon-button m-common-view-btn" ng-click="vm.view(item)">
+                    <md-icon class="material-icons">remove_red_eye</md-icon>
+                </md-button>
+                <span>{{item.des}}</span>
+            </div>
+        </div>
+    </div>
+    <div hidden class="m-photo-beautiful-form">
+        <div layout-gt-sm="column" layout-align-gt-sm="center center">
+            <div class="m-common-content-item" layout-padding ng-repeat="item in vm.photo.items">
+                <div layout="row">
+                    <img ng-src="{{item.url}}" flex />
+                    <div flex>
+                        <md-button aria-label="button-label" class="md-icon-button m-common-view-btn" ng-click="vm.view(item)">
+                            <md-icon class="material-icons">remove_red_eye</md-icon>
+                        </md-button>
+                        <b>{{item.name}}</b>
+                        <p>{{item.des}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

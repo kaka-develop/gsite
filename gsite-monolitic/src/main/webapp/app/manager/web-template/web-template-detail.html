@@ -1,0 +1,59 @@
+<div>
+    <md-button ui-sref="{{vm.previousState}}" class="md-raised md-primary" data-translate="global.form.back">Back</md-button>
+</div>
+<div>
+
+    <div class="m-content">
+        <h2 data-translate="webTemplate.title">Web template infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                <p>
+                    <span data-translate="global.form.id">ID</span> :
+                    <b>{{vm.webTemplate.id}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.name">Name</span> :
+                    <b>{{vm.webTemplate.name}}</b>
+                </p>
+                <p>
+                    <span  data-translate="webTemplate.source">Source</span> :
+                    <b>{{vm.webTemplate.source}}</b>
+                </p>
+                <p>
+                    <span  data-translate="webTemplate.category">Category</span> :
+                    <b>{{vm.webTemplate.category}}</b>
+                </p>
+            </div>
+            <div flex>
+                <p>
+                    <span  data-translate="webTemplate.rating">Rating</span> :
+                    <b>{{vm.webTemplate.rating}}</b>
+                </p>
+                <p>
+                    <span  data-translate="webTemplate.price">Price</span> :
+                    <b>{{vm.webTemplate.price}}$</b>
+                </p>
+                <p>
+                    <span  data-translate="global.form.created">Created date</span> :
+                    <b>{{vm.webTemplate.created | date:'medium' }}</b>
+                </p>
+                <p>
+                    <div class="m-upload-panel" layout="row" layout-align="left center" >
+                        <button type="button" ng-disabled="vm.loading" class="button md-button md-primary" ngf-select="vm.upload($file)" ng-model="vm.mainImageFile" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'">
+                            <span data-translate="global.form.uploadImage">Upload image</span>
+                        </button>
+                        <img ng-show="vm.mainImageFile" ngf-thumbnail="vm.mainImageFile">
+                        <img ng-show="vm.tempImageLink" ng-src="{{vm.tempImageLink}}" >
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="web-template.edit({id: vm.webTemplate.id})" class="md-raised md-primary" data-translate="global.form.edit">Edit</md-button>
+    <md-button ui-sref="web-template.delete({id: vm.webTemplate.id})" class="md-raised md-warn" data-translate="global.form.delete">Delete</md-button>
+</div>

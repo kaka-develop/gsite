@@ -1,0 +1,22 @@
+<div class="m-common-toolbar">
+</div>
+<section id="notifications">
+    <div class="m-notifications" layout-padding layout-gt-sm="row" layout-align-gt-sm="center center">
+        <md-list class="m-common-panel" md-whiteframe="1">
+            <md-list-item class="md-2-line white" ng-click="null" ng-repeat="item in vm.notifications" ui-sref="my-notification.view({id: item.id})">
+                <div layout="row" class="md-list-item-text">
+                    <md-icon class="material-icons {{item.isRead ? '' : 'red-active'}}" flex="none">{{item.isRead ? 'notifications' : 'notifications_active'}}</md-icon>
+                    <div flex>
+                        <p>
+                            <span class="md-title">{{item.title}}</span>
+                        </p>
+                        <p>
+                            <span class="md-subhead m-1-line">{{item.content}}</span>
+                        </p>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </div>
+</section>

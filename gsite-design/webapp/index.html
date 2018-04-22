@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gift Site</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <base href="/">
+
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/md-color-picker/dist/mdColorPicker.min.css">
+    <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/main-600.css">
+    <link rel="stylesheet" href="content/css/main-960.css">
+    <link rel="stylesheet" href="content/css/main-1280.css">
+    <link rel="stylesheet" href="content/css/vendor.css">
+</head>
+
+<body ng-app="gsiteApp" ng-strict-di>
+
+    <div layout-gt-md="row">
+        <div class="main-custom-sidenav" hide-xs hide-sm hide-md ui-view="custom-sidenav" ng-cloak></div>
+        <div class="main-content" layout="column" flex>
+            <md-content flex>
+                <div layout="column">
+                    <div ui-view="toolbar" ng-cloak></div>
+                    <div ui-view="sidenav" ng-cloak></div>
+                    <div ui-view="quicktool" ng-cloak></div>
+                    <div ui-view="content" ng-cloak></div>
+                    <div ui-view="footer" ng-cloak></div>
+                </div>
+            </md-content>
+        </div>
+    </div>
+
+    <!--Extra-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="bower_components/material-angular-paging/build/dist.min.js"></script>
+    <script src="bower_components/tinycolor/dist/tinycolor-min.js"></script>
+    <script src="bower_components/md-color-picker/dist/mdColorPicker.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="bower_components/angular-audio/app/angular.audio.js"></script>
+    <!--App-->
+    <script src="app/app.module.js"></script>
+
+    <script src="app/components/alert/alert.service.js"></script>
+    <script src="app/components/alert/alert.controller.js"></script>
+
+    <script src="app/components/login/login.controller.js"></script>
+    <script src="app/components/login/login.service.js"></script>
+
+    <script src="app/layouts/error/error.state.js"></script>
+    <script src="app/layouts/sidenav/sidenav.controller.js"></script>
+    <script src="app/layouts/quicktool/quicktool.controller.js"></script>
+    <script src="app/layouts/toolbar/toolbar.service.js"></script>
+    <script src="app/layouts/toolbar/toolbar.controller.js"></script>
+    <script src="app/layouts/footer/footer.controller.js"></script>
+    <script src="app/layouts/custom-sidenav/custom-sidenav.controller.js"></script>
+
+    <!--<script src="app/blocks/config/html5.mode.config.js"></script>-->
+
+    <script src="app/app.state.js"></script>
+
+    <script src="app/app.theme.js"></script>
+
+    <script src="app/home/home.state.js"></script>
+    <script src="app/home/home.controller.js"></script>
+
+    <script src="app/account/account.state.js"></script>
+
+    <script src="app/account/activate/activate.state.js"></script>
+    <script src="app/account/activate/activate.controller.js"></script>
+
+    <script src="app/account/sessions/sessions.state.js"></script>
+    <script src="app/account/sessions/sessions.controller.js"></script>
+
+    <script src="app/account/social/social.state.js"></script>
+    <script src="app/account/social/social-register.controller.js"></script>
+
+    <script src="app/account/register/register.state.js"></script>
+    <script src="app/account/register/register.controller.js"></script>
+
+    <script src="app/account/reset/request/reset.request.state.js"></script>
+    <script src="app/account/reset/request/reset.request.controller.js"></script>
+
+    <script src="app/account/reset/finish/reset.finish.state.js"></script>
+    <script src="app/account/reset/finish/reset.finish.controller.js"></script>
+
+    <script src="app/account/settings/settings.state.js"></script>
+    <script src="app/layouts/accountbar/accountbar.controller.js"></script>
+    <script src="app/account/settings/settings.controller.js"></script>
+
+    <script src="app/account/password/password.state.js"></script>
+    <script src="app/account/password/password.controller.js"></script>
+
+    <script src="app/templates/template.service.js"></script>
+    <script src="app/templates/template.state.js"></script>
+    <script src="app/templates/template.controller.js"></script>
+
+    <script src="app/templates/basic-template/basic-template.state.js"></script>
+    <script src="app/templates/basic-template/basic-template.controller.js"></script>
+
+    <script src="app/templates/beautiful-template/beautiful-template.state.js"></script>
+    <script src="app/templates/beautiful-template/beautiful-template.controller.js"></script>
+
+    <script src="app/templates/latest-template/latest-template.state.js"></script>
+    <script src="app/templates/latest-template/latest-template.controller.js"></script>
+
+    <script src="app/customer/customer.state.js"></script>
+
+    <script src="app/customer/my-website/my-website.service.js"></script>
+    <script src="app/customer/my-website/my-website.state.js"></script>
+    <script src="app/customer/my-website/my-website.controller.js"></script>
+    <script src="app/customer/my-website/my-website-dialog.controller.js"></script>
+    <script src="app/customer/my-website/my-website-share.controller.js"></script>
+    <script src="app/customer/my-website/my-website-mail.controller.js"></script>
+    <script src="app/customer/my-website/my-website-custom.controller.js"></script>
+    <script src="app/customer/my-website/my-website-view.controller.js"></script>
+
+    <script src="app/layouts/supportbar/supportbar.controller.js"></script>
+    <script src="app/customer/support/support.state.js"></script>
+
+    <script src="app/customer/support/faq/faq.service.js"></script>
+    <script src="app/customer/support/faq/faq.state.js"></script>
+    <script src="app/customer/support/faq/faq.controller.js"></script>
+
+    <script src="app/customer/support/my-question/my-question.service.js"></script>
+    <script src="app/customer/support/my-question/my-question.state.js"></script>
+    <script src="app/customer/support/my-question/my-question.controller.js"></script>
+    <script src="app/customer/support/my-question/my-question-dialog.controller.js"></script>
+
+    <script src="app/customer/support/my-feedback/my-feedback-option.service.js"></script>
+    <script src="app/customer/support/my-feedback/my-feedback.service.js"></script>
+    <script src="app/customer/support/my-feedback/my-feedback.state.js"></script>
+    <script src="app/customer/support/my-feedback/my-feedback.controller.js"></script>
+    <script src="app/customer/support/my-feedback/my-feedback-dialog.controller.js"></script>
+
+    <script src="app/customer/my-notification/my-notification.service.js"></script>
+    <script src="app/customer/my-notification/my-notification.state.js"></script>
+    <script src="app/customer/my-notification/my-notification.controller.js"></script>
+    <script src="app/customer/my-notification/my-notification-view.controller.js"></script>
+
+    <script src="app/payment/payment.state.js"></script>
+
+    <script src="app/payment/website-payment/website-payment.state.js"></script>
+    <script src="app/payment/website-payment/website-payment.controller.js"></script>
+
+    <script src="app/web-modules/m-toolbar/m-toolbar.controller.js"></script>
+    <script src="app/web-modules/m-toolbar/m-toolbar-dialog.controller.js"></script>
+    <script src="app/web-modules/m-sidenav/m-sidenav.controller.js"></script>
+    <script src="app/web-modules/m-sidenav/m-sidenav-dialog.controller.js"></script>
+    <script src="app/web-modules/m-sidenav-list/m-sidenav-list.controller.js"></script>
+    <script src="app/web-modules/m-sidenav-list/m-sidenav-list-dialog.controller.js"></script>
+    <script src="app/web-modules/m-home/m-home.controller.js"></script>
+    <script src="app/web-modules/m-home/m-home-dialog.controller.js"></script>
+    <script src="app/web-modules/m-footer/m-footer.controller.js"></script>
+    <script src="app/web-modules/m-footer/m-footer-dialog.controller.js"></script>
+    <script src="app/web-modules/m-audio-player/m-audio-player.controller.js"></script>
+
+    <script src="app/web-modules/m-basic-info/m-basic-info.controller.js"></script>
+    <script src="app/web-modules/m-basic-info/m-basic-info-dialog.controller.js"></script>
+
+    <script src="app/web-modules/m-photo/m-photo.controller.js"></script>
+    <script src="app/web-modules/m-photo/m-photo-view-dialog.controller.js"></script>
+    <script src="app/web-modules/m-photo/m-photo-dialog.controller.js"></script>
+    <script src="app/web-modules/m-photo/m-photo.service.js"></script>
+
+    <script src="app/web-modules/m-song/m-song.controller.js"></script>
+    <script src="app/web-modules/m-song/m-song.service.js"></script>
+    <script src="app/web-modules/m-song/m-song-dialog.controller.js"></script>
+
+    <!--Admin-->
+    <script src="app/admin/admin.state.js"></script>
+    <script src="app/layouts/adminbar/adminbar.controller.js"></script>
+    <script src="app/services/user/user.service.js"></script>
+
+    <script src="app/admin/user-management/user-management.state.js"></script>
+    <script src="app/admin/user-management/user-management.controller.js"></script>
+    <script src="app/admin/user-management/user-management-detail.controller.js"></script>
+    <script src="app/admin/user-management/user-management-dialog.controller.js"></script>
+
+    <script src="app/admin/metrics/metrics.state.js"></script>
+    <script src="app/admin/metrics/metrics.service.js"></script>
+    <script src="app/admin/metrics/metrics.controller.js"></script>
+
+    <script src="app/admin/configuration/configuration.state.js"></script>
+    <script src="app/admin/configuration/configuration.service.js"></script>
+    <script src="app/admin/configuration/configuration.controller.js"></script>
+
+    <script src="app/admin/audits/audits.state.js"></script>
+    <script src="app/admin/audits/audits.service.js"></script>
+    <script src="app/admin/audits/audits.controller.js"></script>
+
+    <script src="app/admin/logs/logs.state.js"></script>
+    <script src="app/admin/logs/logs.service.js"></script>
+    <script src="app/admin/logs/logs.controller.js"></script>
+
+    <script src="app/admin/health/health.state.js"></script>
+    <script src="app/admin/health/health.service.js"></script>
+    <script src="app/admin/health/health.controller.js"></script>
+    <script src="app/admin/health/health.modal.controller.js"></script>
+
+    <script src="app/admin/docs/docs.state.js"></script>
+
+    <!--Manager-->
+    <script src="app/manager/manager.state.js"></script>
+    <script src="app/layouts/managerbar/managerbar.controller.js"></script>
+
+    <script src="app/manager/web-template/web-template.state.js"></script>
+    <script src="app/manager/web-template/web-template.service.js"></script>
+    <script src="app/manager/web-template/web-template.controller.js"></script>
+    <script src="app/manager/web-template/web-template-dialog.controller.js"></script>
+    <script src="app/manager/web-template/web-template-detail.controller.js"></script>
+
+    <script src="app/manager/website/website.state.js"></script>
+    <script src="app/manager/website/website.service.js"></script>
+    <script src="app/manager/website/website.controller.js"></script>
+    <script src="app/manager/website/website-dialog.controller.js"></script>
+    <script src="app/manager/website/website-detail.controller.js"></script>
+
+    <script src="app/manager/question/question.state.js"></script>
+    <script src="app/manager/question/question.service.js"></script>
+    <script src="app/manager/question/question.controller.js"></script>
+    <script src="app/manager/question/question-dialog.controller.js"></script>
+    <script src="app/manager/question/question-detail.controller.js"></script>
+
+    <script src="app/manager/feedback/feedback.state.js"></script>
+    <script src="app/manager/feedback/feedback.service.js"></script>
+    <script src="app/manager/feedback/feedback.controller.js"></script>
+    <script src="app/manager/feedback/feedback-dialog.controller.js"></script>
+    <script src="app/manager/feedback/feedback-detail.controller.js"></script>
+</body>feedback
+
+</html>

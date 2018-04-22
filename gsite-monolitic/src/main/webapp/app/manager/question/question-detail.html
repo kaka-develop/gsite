@@ -1,0 +1,50 @@
+<div>
+    <md-button ui-sref="{{vm.previousState}}" class="md-raised md-primary" data-translate="global.form.back">Back</md-button>
+</div>
+<div>
+
+    <div class="m-content">
+        <h2 data-translate="question.info">Question infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                <p>
+                    <span data-translate="global.form.id">ID</span> :
+                    <b>{{vm.question.id}}</b>
+                </p>
+                <p>
+                    <span data-translate="question.content">Content</span> :
+                    <b>{{vm.question.content}}</b>
+                </p>
+                <p>
+                    <span data-translate="question.answer">Answer</span> :
+                    <b>{{vm.question.answer}}</b>
+                </p>
+
+            </div>
+            <div flex>
+                <p>
+                    <span data-translate="question.user">User</span> :
+                    <b>{{vm.question.user_id}}</b>
+                </p>
+
+                <p>
+                    <span data-translate="global.form.created">Created date</span> :
+                    <b>{{vm.question.created | date:'medium'}}</b>
+                </p>
+                <p>
+                    <md-switch class="md-primary" ng-model="vm.question.frequent" aria-label="Is frequent" ng-change="vm.setFrequent()">
+                       <span data-translate="question.frequent">Is frequent</span>
+                    </md-switch>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="question.edit({id: vm.question.id})" class="md-raised md-primary" data-translate="global.form.edit">Edit</md-button>
+    <md-button ui-sref="question.delete({id: vm.question.id})" class="md-raised md-warn" data-translate="global.form.delete">Delete</md-button>
+</div>

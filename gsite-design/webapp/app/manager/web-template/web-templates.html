@@ -1,0 +1,45 @@
+<h2 data-translate="gsiteApp.webTemplate.home.title">
+    Web Templates</h2>
+<div>
+    <table layout-fill>
+        <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                <th>
+                    <md-button ui-sref="web-template.new" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">add</i>
+                    </md-button>
+                </th>
+                <th hide-xs hide-sm jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="name"><span data-translate="gsiteApp.webTemplate.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th hide-xs hide-sm jh-sort-by="rating"><span data-translate="gsiteApp.webTemplate.rating">Rating</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th hide-xs jh-sort-by="category"><span data-translate="gsiteApp.webTemplate.category">Category</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="source"><span data-translate="gsiteApp.webTemplate.source">Source</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th hide-xs hide-sm>Date</th>
+            </tr>
+        </thead>
+        <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+            <tr ng-repeat="webTemplate in vm.webTemplates track by webTemplate.id">
+                <td>
+                    <div class="m-item-actions" layout="row" layout-align="start center">
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-warn" ui-sref="web-template.delete({id: webTemplate.id})">
+                            <i class="material-icons">delete</i>
+                        </md-button>
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-primary" ui-sref="web-template.edit({id: webTemplate.id})">
+                            <i class="material-icons">edit</i>
+                        </md-button>
+                        <md-button class="md-icon-button md-raised md-primary" ui-sref="web-template.detail({id:webTemplate.id})">
+                            <i class="material-icons">remove_red_eye</i>
+                        </md-button>
+                    </div>
+                </td>
+                <td hide-xs><a ui-sref="web-template-detail({id:webTemplate.id})">{{webTemplate.id}}</a></td>
+                <td>{{webTemplate.name}}</td>
+                <td hide-xs hide-sm>{{webTemplate.rating}}</td>
+                <td hide-xs hide-sm>{{webTemplate.category}}</td>
+                <td><a ui-sref="{{webTemplate.source}}">{{webTemplate.source}}</a></td>
+                <td hide-xs hide-sm>{{webTemplate.created}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

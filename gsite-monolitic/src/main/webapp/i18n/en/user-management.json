@@ -1,0 +1,10 @@
+{
+    "usermanage": {
+        "activated": "Activated",
+        "authority": "Authority",
+        "info": "User information",
+        "createdBy": "Created by",
+        "modified": "Modified date",
+        "modifiedBy" : "Modified by"
+    }
+}

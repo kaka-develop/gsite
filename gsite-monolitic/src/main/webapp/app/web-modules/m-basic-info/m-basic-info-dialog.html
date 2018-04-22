@@ -1,0 +1,33 @@
+<md-card>
+    <md-card-content>
+        <form name="Form" ng-model="vm.form" layout="column">
+            <div layout-gt-xs="row">
+                <md-input-container layout-fill>
+                    <label data-translate="global.form.firstName">First Name</label>
+                    <input type="text" name="firstName" ng-minlength="3" ng-model="vm.basicinfo.firstName" required/>
+                </md-input-container>
+                <md-input-container layout-fill>
+                    <label data-translate="global.form.lastName">Last name</label>
+                    <input type="text" name="lastName" ng-minlength="3" ng-model="vm.basicinfo.lastName" required/>
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
+                <md-input-container layout-fill>
+                    <label data-translate="global.form.email">Email</label>
+                    <input type="email" name="email" ng-minlength="3" ng-model="vm.basicinfo.email" required/>
+                </md-input-container>
+                <md-input-container layout-fill>
+                    <label data-translate="global.form.age">Age</label>
+                    <input type="number" name="age" min="6" ng-model="vm.basicinfo.age" required/>
+                </md-input-container>
+            </div>
+
+            <div>
+                <md-input-container layout-fill>
+                    <label data-translate="global.form.des">Description</label>
+                    <input type="text" name="des" ng-minlength="6" ng-model="vm.basicinfo.des" required/>
+                </md-input-container>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

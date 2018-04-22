@@ -1,0 +1,108 @@
+<div class="m-common-toolbar">
+</div>
+<div class="m-webpayment" layout-gt-xs="row" layout-align="center center">
+    <form name="Form" layout-padding ng-submit="vm.buyWithCard()">
+        <md-content class="md-no-momentum white-bg" md-whiteframe="1">
+            <h2 data-translate="webPayment.title">Purchase website with:</h2>
+            <div layout="row">
+                <md-button ng-disabled="vm.isPaying" class="md-raised m-common-paypal-btn" aria-label="PayPal" ng-click="vm.buyNow()"></md-button>
+                <button ng-disabled="vm.isPaying" type="submit" class="md-button md-raised m-common-creditcard-btn" aria-label="Credit card"></button>
+            </div>
+            <div layout-gt-sm="row" layout-padding>
+                <div layout-padding flex>
+                    <md-input-container class="md-icon-float md-block">
+                        <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">credit_card</md-icon>
+                        <label data-translate="webPayment.cardType">Type</label>
+                        <md-select ng-model="vm.card.type" required>
+                            <md-option value="mastercard">Mastercard</md-option>
+                            <md-option value="visa">Visa</md-option>
+                        </md-select>
+                        <div ng-messages="Form.type.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <br>
+                    <md-input-container class="md-icon-float md-block">
+                        <md-icon style="color:black" class="material-icons">confirmation_number</md-icon>
+                        <label data-translate="webPayment.cardNumber">Card number</label>
+                        <input name="number" ng-model="vm.card.number" type="text" required ng-pattern="/^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/">
+                        <div ng-messages="Form.number.$error">
+                            <div ng-message="required">Visa or Master card number</div>
+                        </div>
+                    </md-input-container>
+                </div >
+                <div class="mc-person" flex>
+                    <md-input-container class="md-icon-float md-block">
+                        <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">perm_identity</md-icon>
+                        <label data-translate="global.form.firstName"></label>
+                        <input name="firstName" ng-model="vm.card.firstName" type="text" ng-minlength="2" ng-required="true">
+                        <div ng-messages="Form.firstName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-icon-float md-block">
+                        <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">perm_identity</md-icon>
+                        <label data-translate="global.form.lastName"></label>
+                        <input name="lastName" ng-model="vm.card.lastName" type="text" ng-minlength="2" ng-required="true">
+                        <div ng-messages="Form.lastName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <p></p>
+                    <div layout="row">
+                        <md-input-container flex="10">
+                            <md-icon style="color:black" class="material-icons">date_range</md-icon>
+                        </md-input-container>
+                        <md-input-container>
+                            <label data-translate="webPayment.month">Month</label>
+                            <md-select name="month" ng-model="vm.card.month" required>
+                                <md-option value="1">01</md-option>
+                                <md-option value="2">02</md-option>
+                                <md-option value="3">03</md-option>
+                                <md-option value="4">04</md-option>
+                                <md-option value="5">05</md-option>
+                                <md-option value="6">06</md-option>
+                                <md-option value="7">07</md-option>
+                                <md-option value="8">08</md-option>
+                                <md-option value="9">09</md-option>
+                                <md-option value="10">10</md-option>
+                                <md-option value="11">11</md-option>
+                                <md-option value="12">12</md-option>
+                            </md-select>
+                            <div ng-messages="Form.month.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container>
+                            <label data-translate="webPayment.year">Year</label>
+                            <md-select name="year" ng-model="vm.card.year" required>
+                                <md-option value="2018">2018</md-option>
+                                <md-option value="2019">2019</md-option>
+                                <md-option value="2020">2020</md-option>
+                                <md-option value="2021">2021</md-option>
+                                <md-option value="2022">2022</md-option>
+                                <md-option value="2023">2023</md-option>
+                                <md-option value="2024">2024</md-option>
+                                <md-option value="2025">2025</md-option>
+                            </md-select>
+                            <div ng-messages="Form.year.$error">
+                                <div ng-message="required">Required</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container>
+                            <md-icon style="color:black" class="material-icons">verified_user</md-icon>
+                            <input name="cvv" ng-model="vm.card.cvv" type="text" placeholder="CVV" ng-required="true" ng-pattern="/^[0-9]{3,4}$/">
+                            <div ng-messages="Form.cvv.$error">
+                                <div ng-message="required">Required</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+                <button type="submit" ng-disabled="!Form.$valid || vm.isPaying" class="md-button md-raised md-primary" data-translate="webPayment.purchase">Purechase</button>
+                <md-button ui-sref="my-website" ng-disabled="vm.isPaying" class="md-raised" data-translate="global.form.cancel">Cancel</md-button>
+            </div>
+        </md-content>
+    </form>
+</div>

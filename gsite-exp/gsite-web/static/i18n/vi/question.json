@@ -1,0 +1,10 @@
+{
+    "question": {
+        "title": "Câu hỏi",
+        "answer": "Trả lời",
+        "user": "Người dùng",
+        "content": "Nội dung",
+        "info": "Thông tin câu hỏi",
+        "frequent": "Thường gặp"
+    }
+}

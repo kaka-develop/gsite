@@ -1,0 +1,18 @@
+<div layout-gt-sm="column" layout-align-gt-sm="center center">
+    <div class="m-common-content-item" ng-repeat="item in vm.songs">
+        <div layout="row" layout-padding layout-align="center center">
+            <span hide-xs>{{$index + 1}}</span>
+            <b class="m-1-line" flex>{{ item.title }}</b>
+            <span class="m-1-line" flex="25">{{ item.artist }}</span>
+            <span hide-xs hide-sm flex="15">{{ item.date }}</span>
+            <span hide-xs flex="10">{{ item.length }}</span>
+            <md-button aria-label="button-label" class="md-icon-button m-common-song-play-btn" ng-click="vm.playAt($index)">
+                <md-icon class="material-icons">play_arrow</md-icon>
+            </md-button>
+            <md-button hide-xs aria-label="button-label" class="md-icon-button m-common-song-download-btn" ng-click="vm.downloadSongAt($index)">
+                <md-icon class="material-icons">file_download</md-icon>
+            </md-button>
+        </div>
+        <md-divider></md-divider>
+    </div>
+</div>

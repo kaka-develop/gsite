@@ -1,0 +1,29 @@
+<div layout-padding>
+    <div layout-padding class="md-whiteframe-1dp">
+        <span hide-xs class="md-title">Create or edit an feedback</span>
+        <form name="Form" layout="column">
+            <md-input-container>
+                <label>Title</label>
+                <input type="text" name="title" ng-minlength="2" ng-model="vm.feedback.title" required/>
+            </md-input-container>
+            <md-input-container>
+                <label>Content</label>
+                <input type="text" name="content" ng-minlength="2" ng-model="vm.feedback.content" required/>
+            </md-input-container>
+            <md-input-container layout-fill>
+                <label>User</label>
+                <md-select ng-model="vm.feedback.user_id" required>
+                    <md-option ng-repeat="item in vm.users" value="{{item.id}}">{{item.id}}</md-option>
+                </md-select>
+            </md-input-container>
+        </form>
+
+        <div layout="row">
+            <md-button ng-click="vm.save()" ng-disabled="!Form.$valid" class="md-raised md-primary">Save</md-button>
+            <span flex></span>
+            <md-button ng-click="vm.closeDialog()" class="md-raised right">Cancel</md-button>
+        </div>
+
+        </form>
+    </div>
+</div>

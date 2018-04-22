@@ -1,0 +1,26 @@
+{
+    "template": {
+        "menu": {
+            "home": "Home",
+            "info": "Information",
+            "photos": "Photos",
+            "songs": "Songs"
+        },
+        "favor": {
+            "songs": "Favorite songs",
+            "photos": "Favorite photos"
+        },
+        "info": {
+            "title": "Basic information",
+            "fname": "First name: ",
+            "lname": "Last name: ",
+            "age": "Age: ",
+            "overview": "Overview: ",
+            "email": "Email address: "
+        },
+        "footer": {
+            "english": "English",
+            "vietnam": "Vietnamese"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<div class="m-common-toolbar">
+</div>
+<section id="websites">
+    <div class="m-websites" layout="column" layout-align="center center">
+        <md-card class="m-websites-card" ng-repeat="item in vm.websites" layout-gt-sm="row">
+            <img flex ng-src="{{item.tempLink ? item.tempLink : 'content/images/temp/temp-default.jpg'}}" class="md-card-image" alt="Washed Out">
+            <div flex>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.name}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <span>{{item.des}}</span>
+                </md-card-content>
+                <div class="m-card-actions" layout="row" layout-align="start center">
+                    <md-button ui-sref="my-website-view({website: item})" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">remove_red_eye</i>
+                    </md-button>
+
+                    <md-button ui-sref="my-website.customize({id: item.id})" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">edit</i>
+                    </md-button>
+                    <md-button ui-sref="my-website.share({id: item.id})" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">share</i>
+                    </md-button>
+                    <md-button ui-sref="my-website.delete({id: item.id})" class="md-icon-button md-raised md-warn">
+                        <i class="material-icons">delete</i>
+                    </md-button>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</section>

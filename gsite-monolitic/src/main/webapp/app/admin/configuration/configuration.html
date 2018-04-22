@@ -1,0 +1,58 @@
+<h2 data-translate="configuration.title">
+    Configuration</h2>
+
+<span data-translate="configuration.filter">Filter</span>
+<div class="m-content">
+    <md-input-container class="md-icon-float md-block">
+        <label>Enter filter</label>
+        <md-icon class="material-icons">spellcheck</md-icon>
+        <input type="text" name="filter" ng-model="filter" />
+    </md-input-container>
+</div>
+
+<label ng-hide="filteredConfig.length == 0">Spring configuration</label>
+
+<div layout-fill layout="column">
+    <md-content>
+        <table layout-fill style="table-layout:fixed" ng-hide="filteredConfig.length == 0">
+            <thead>
+                <tr>
+                    <th ng-click="predicate = 'prefix'; reverse=!reverse" class="col-sm-4"><span data-translate="configuration.table.prefix">Prefix</span></th>
+                    <th hide-xs data-translate="configuration.table.properties" class="col-sm-8">Properties</th>
+                </tr>
+            </thead>
+
+            <tr ng-repeat="entry in filtered = (vm.configuration | filter:filter | orderBy:predicate:reverse)">
+                <td><span>{{entry.prefix}}</span></td>
+                <td hide-xs>
+                    <div class="row" ng-repeat="(key, value) in entry.properties">
+                        <div class="col-md-4">{{key}}</div>
+                        <div class="col-md-8">
+                            <span class="pull-right label label-default break">{{value}}</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div ng-repeat="(key, value) in vm.allConfiguration">
+            <label ng-hide="filtered.length == 0"><span>{{key}}</span></label>
+            <table layout-fill style="table-layout:fixed" ng-hide="filtered.length == 0">
+                <thead>
+                    <tr>
+                        <th class="col-sm-4">Property</th>
+                        <th hide-xs class="col-sm-8">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in filtered = (value | filter:filter)">
+                        <td class="break">{{item.key}}</td>
+                        <td hide-xs class="break">
+                            <span class="pull-right label label-default break">{{item.val}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </md-content>
+</div>

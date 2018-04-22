@@ -1,0 +1,22 @@
+<div class="m-template-audio-player" ng-show="vm.isShow">
+    <div layout="row" layout-padding layout="left center">
+        <b flex="50" class="m-1-line">{{vm.song.title}}</b>
+        <md-button aria-label="button-label" class="md-icon-button" ng-click="vm.back()">
+            <md-icon class="material-icons white">skip_previous</md-icon>
+        </md-button>
+        <md-button aria-label="button-label" class="md-icon-button" ng-click="vm.play()">
+            <md-icon class="material-icons white">{{vm.isPlaying ? 'pause' : 'play_arrow'}}</md-icon>
+        </md-button>
+        <md-button aria-label="button-label" class="md-icon-button" ng-click="vm.next()">
+            <md-icon class="material-icons white">skip_next</md-icon>
+        </md-button>
+        <md-button aria-label="button-label" class="md-icon-button" ng-click="vm.repeatOne()">
+            <md-icon class="material-icons white">{{vm.isRepeatOne ? 'repeat_one' : 'repeat'}}</md-icon>
+        </md-button>
+         <md-button ng-hide="vm.isPlaying" aria-label="button-label" class="md-icon-button" ng-click="vm.hide()">
+            <md-icon class="material-icons white">clear</md-icon>
+        </md-button>
+        <span flex="11" ng-show="vm.isPlaying" >{{vm.audio.remaining | trackTime}}</span>
+    </div>
+
+</div>

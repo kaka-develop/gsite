@@ -1,0 +1,55 @@
+<div class="m-common-toolbar">
+</div>
+<section id="templates" class="m-templates">
+    <div layout="row">
+        <md-input-container md-whiteframe="1" class="m-templates-sort-btn">
+            <label data-translate="global.sortby">Sort by</label>
+            <md-select ng-model="vm.currentSort" ng-change="vm.changeSortType()">
+                <md-option value="name" data-translate="global.name">
+                    name
+                </md-option>
+                <md-option value="date" data-translate="global.date">
+                    date
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <span flex></span>
+        <md-input-container md-whiteframe="1" class="m-templates-search-btn">
+            <label data-translate="global.searchby">Search by</label>
+            <md-select ng-model="vm.currentSearch" ng-change="vm.changeSearchType()">
+                <md-option value="name" data-translate="global.name">
+                    name
+                </md-option>
+                <md-option value="des" data-translate="global.des">
+                    description
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-align="center center">
+        <md-card class="m-templates-card" ng-repeat="item in vm.webTemplates" layout-gt-sm="row">
+            <img flex ng-src="{{item.tempLink ? item.tempLink : 'content/images/temp/temp-default.jpg'}}"
+                 class="md-card-image" alt="Washed Out">
+            <div flex>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.name}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <span>
+                 <b class="blue">{{item.price == 0 ? 'Free !' : item.price + '.0'}}$</b>
+                    </span>
+                </md-card-content>
+                <div class="m-card-actions" layout="row" layout-align="start center">
+                    <md-button ui-sref="{{item.source}}" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">remove_red_eye</i>
+                    </md-button>
+                    <md-button class="md-icon-button md-raised md-primary">
+                        <i ui-sref="my-website.new({template: item.source})" class="material-icons">add</i>
+                    </md-button>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</section>

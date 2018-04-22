@@ -1,0 +1,10 @@
+{
+    "usermanage": {
+        "activated": "Kích hoạt",
+        "authority": "Vai trò",
+        "info": "Thông tin người dùng",
+        "createdBy": "Tạo bỏi",
+        "modified": "Ngày sửa đổi",
+        "modifiedBy" : "Sửa đổi bởi"
+    }
+}

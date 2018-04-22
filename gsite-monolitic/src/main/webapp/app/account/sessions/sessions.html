@@ -1,0 +1,29 @@
+<div class="m-common-toolbar">
+</div>
+<div class="m-common-panel md-whiteframe-1dp">
+    <h2 data-translate="sessions.title" translate-values="{username: '{{vm.account.login}}'}">Active sessions for {{vm.account.login}}</h2>
+
+    <table layout-fill>
+        <thead>
+            <tr>
+                <th>Invalidate</th>
+                <th data-translate="sessions.table.ipaddress">IP Address</th>
+                <th hide-xs data-translate="sessions.table.useragent">User agent</th>
+                <th data-translate="sessions.table.date">Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="session in vm.sessions">
+                <td>
+                    <md-button class="md-raised md-warn" aria-label="invalid" ng-click=""> Invalid </md-button>
+                </td>
+                <td>{{session.ipAddress}}</td>
+                <td hide-xs>{{session.userAgent}}</td>
+                <td>{{session.tokenDate | date:'longDate'}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>

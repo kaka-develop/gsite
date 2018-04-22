@@ -1,0 +1,20 @@
+<md-card class="m-template-home-dialog">
+    <md-card-content>
+        <p hide-xs class="md-title">Edit home page</p>
+        <form name="Form" layout-fill>
+            <md-input-container layout-fill>
+                <label>Name</label>
+                <input type="text" name="name" ng-minlength="2" ng-model="vm.homepage.name" required/>
+            </md-input-container>
+            <md-input-container layout-fill>
+                <label>Full name</label>
+                <input type="text" name="fullName" ng-minlength="2" ng-model="vm.homepage.fullName" required/>
+            </md-input-container>
+            <md-input-container layout-fill layout="row" layout-align="left center" >
+                 <button type="button" class="button md-button md-primary" ngf-select="vm.upload($file)" ng-model="vm.mainImage" name="mainAvatar" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB"
+                    ngf-min-height="100" >Main image</button>
+                <img ngf-thumbnail="vm.mainImage || 'content/images/avatars/kaka.jpg'">
+            </md-input-container>
+        </form>
+    </md-card-content>
+</md-card>

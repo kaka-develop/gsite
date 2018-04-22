@@ -1,0 +1,13 @@
+<md-card>
+    <md-card-content>
+        <p hide-xs class="md-title">Edit toolbar</p>
+        <form name="Form" layout-fill>
+            <md-input-container layout-fill>
+                <label>Title</label>
+                <input type="text" name="title" ng-minlength="2" ng-model="vm.toolbar.title" required/>
+            </md-input-container>
+
+            <div class="m-color-picker" label="Text Color" icon="text_format" md-color-picker ng-model="vm.toolbar.textColor" md-color-history="true"></div>
+        </form>
+    </md-card-content>
+</md-card>

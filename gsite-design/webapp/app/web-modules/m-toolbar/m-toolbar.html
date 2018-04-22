@@ -1,0 +1,18 @@
+<md-toolbar class="md-hue-2 m-template-toolbar">
+    <div class="md-toolbar-tools" layout-gt-sm="row">
+        <md-button class="md-icon-button m-sidenav-togger" ng-click="vm.toggleLeft()" aria-label="Settings">
+            <md-icon style="color: {{vm.toolbar.textColor}}" class="material-icons">menu</md-icon>
+        </md-button>
+        <!--<div flex="5" layout="row" layout-align="center center">
+            <img  class="m-person-avatar" ng-src="content/images/other/avatar.jpg" class="md-avatar" />
+        </div>-->
+        <h2>
+            <span style="color: {{vm.toolbar.textColor}}">{{vm.toolbar.title}}</span>
+        </h2>
+        <span flex></span>
+        <div hide-xs hide-sm >
+            <md-button class="m-normal-text" aria-label="Home" ui-sref="{{vm.homeState}}"> Home </md-button>
+            <md-button class="m-normal-text" ng-repeat="item in vm.list.choices" ui-sref="{{item.state}}" aria-label="{{item.title}} ">{{item.title}} </md-button>
+        </div>
+    </div>
+</md-toolbar>

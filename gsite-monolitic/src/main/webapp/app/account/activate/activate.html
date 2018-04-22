@@ -1,0 +1,23 @@
+<div class="m-common-toolbar">
+</div>
+
+<div class="m-common-panel md-whiteframe-1dp" layout="column" layout-align="center center">
+    <h1 data-translate="activate.title">Activation</h1>
+
+    <div ng-show="vm.success" translate-compile layout="column" layout-align="center center">
+        <p data-translate="activate.messages.success.title" >Your user has been activated successfully.</p>
+        <p>
+            <strong data-translate="activate.messages.success.subtitle">Please sign in</strong>
+        </p>
+        <md-button class="md-raised md-primary" aria-label="login" data-translate="activate.login"> Login </md-button>
+    </div>
+
+    <div ng-show="vm.error"  layout="column" layout-align="center center">
+        <p class="error-text" data-translate="activate.messages.error.title">Your user could not be activated!</p>
+        <p>
+            <strong data-translate="activate.messages.error.subtitle">Please sign up</strong>
+        </p>
+        <md-button class="md-raised md-warn" aria-label="Sign up" data-translate="activate.signup"> Sign up </md-button>
+    </div>
+
+</div>

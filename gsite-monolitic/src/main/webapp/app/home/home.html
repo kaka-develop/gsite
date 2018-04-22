@@ -1,0 +1,113 @@
+<main class="m-home">
+    <section id="home" layout="row" flex>
+        <div layout="row" layout-fill ng-cloak>
+            <img hide-gt-xs class="m-home-bg" src="/content/images/bg/bg-default.jpg"/>
+        </div>
+    </section>
+    <section id="description" layout="row" flex>
+        <div class="m-home-panel">
+            <div hide-xs flex layout="column" layout-align="center center">
+                <b class="m-home-panel-title" data-translate="home.title">GSite</b>
+                <b data-translate="home.subtitle">Gifts for someone</b>
+            </div>
+            <p class="md-subhead" data-translate="home.des">Let's create awsome websites with GSite. You can give your
+                websites to someone as the gifts. We support free
+                web templates.</p>
+            <div layout-gt-sm="column" layout-align-gt-sm="center center">
+                <md-button class="md-raised md-primary" ui-sref="template" data-translate="home.ftemplate">Find
+                    templates
+                </md-button>
+            </div>
+        </div>
+    </section>
+    <section id="templates">
+        <div class="m-home-sec">
+            <p class="md-title" align="center" data-translate="home.template">Most Popular Templates
+                <md-icon style="color:white" aria-label="keyboard_arrow_down" class="material-icons">
+                    keyboard_arrow_down
+                </md-icon>
+            </p>
+        </div>
+        <div layout-xs="column" layout-gt-xs="row" layout-align-xs="center center">
+            <md-card ng-repeat="item in vm.webTemplates" flex>
+                <img ng-src="{{item.tempLink ? item.tempLink : 'content/images/temp/temp-default.jpg'}}" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.name}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <span>
+                 <b class="blue">{{item.price == 0 ? 'Free' : item.price + '.0$'}}!</b>
+                            {{item.des}}
+                        </span>
+                </md-card-content>
+                <div class="m-card-actions" layout="row" layout-align="start center">
+                    <md-button ui-sref="{{item.source}}" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">remove_red_eye</i>
+                    </md-button>
+                    <md-button ui-sref="my-website.new({template: item.source})"
+                               class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">add</i>
+                    </md-button>
+                </div>
+            </md-card>
+    </section>
+    <section id="features" layout="column" flex>
+        <div class="m-home-sec">
+            <p class="md-title" align="center" data-translate="home.feature.title">Awsome Features
+                <md-icon style="color:white" aria-label="keyboard_arrow_down" class="material-icons">
+                    keyboard_arrow_down
+                </md-icon>
+            </p>
+        </div>
+        <div layout="column" layout-align-xs="center">
+            <md-content layout-xs="column" layout-gt-xs="row" class="m-features md-whiteframe-1dp">
+                <div flex layout="row" layout-gt-xs="column" class="m-home-feature-list">
+                    <div flex>
+                        <md-list-item>
+                            <i class="material-icons">check_circle</i> &nbsp
+                            <p class="md-subhead" data-translate="home.feature.template">View templates</p>
+                        </md-list-item>
+                    </div>
+                    <div flex>
+                        <md-list-item>
+                            <i class="material-icons">check_circle</i> &nbsp
+                            <p class="md-subhead" data-translate="home.feature.web">Build website</p>
+                        </md-list-item>
+                    </div>
+
+
+                </div>
+                <div flex layout="row" layout-gt-xs="column" class="m-home-feature-list">
+                    <div flex>
+                        <md-list-item>
+                            <i class="material-icons">check_circle</i> &nbsp
+                            <p class="md-subhead" data-translate="home.feature.share">Share website</p>
+                        </md-list-item>
+                    </div>
+                    <div flex>
+                        <md-list-item>
+                            <i class="material-icons">check_circle</i> &nbsp
+                            <p class="md-subhead" data-translate="home.feature.custom"> Customization</p>
+                        </md-list-item>
+                    </div>
+                </div>
+                <div flex layout="row" layout-gt-xs="column" class="m-home-feature-list">
+                    <div flex>
+                        <md-list-item>
+                            <i class="material-icons">check_circle</i> &nbsp
+                            <p class="md-subhead" data-translate="home.feature.domain">Sub domain</p>
+                        </md-list-item>
+                    </div>
+                    <div flex>
+                        <md-list-item>
+                            <i class="material-icons">check_circle</i> &nbsp
+                            <p class="md-subhead" data-translate="home.feature.manage">Management</p>
+                        </md-list-item>
+                    </div>
+                </div>
+            </md-content>
+        </div>
+    </section>
+</main>

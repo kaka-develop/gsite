@@ -1,0 +1,77 @@
+<div class="m-template-home">
+    <section>
+        <div layout-gt-sm="row" layout-align-gt-sm="center center">
+            <div class="m-common-content-item" layout-gt-sm="column" layout-align-gt-sm="center center">
+                <img class="m-template-home-avatar" ng-src="{{vm.mainImageLink ? vm.mainImageLink : 'content/images/temp/temp-default.jpg'}}" />
+                <div layout="column" layout-padding layout-align="center center">
+                    <a href="" ui-sref="{{vm.homeState + '.info'}}"> <span class="md-title">{{vm.homepage.name}} </span></a>
+                    <span class="md-subtitle">{{vm.homepage.fullName}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section ng-show="vm.song.isEnable">
+        <div layout="column" layout-align-gt-sm="center center">
+            <a href="" ui-sref="{{vm.homeState + '.song'}}">
+                <p class="md-title" align="center">
+                   <span data-translate="template.favor.songs">Favorite Songs</span>
+                    <md-icon aria-label="keyboard_arrow_down" class="material-icons"> keyboard_arrow_down </md-icon>
+                </p>
+            </a>
+            <div class="m-template-song-panel">
+                <div class="m-template-song-item" ng-repeat="item in vm.songs">
+                    <div layout="row" layout-padding layout-align="center center">
+                        <b class="m-1-line" flex>{{ item.title }}</b>
+                        <span class="m-1-line" flex-xs="45" flex-gt-xs="25">{{ item.artist }}</span>
+                        <span hide-xs hide-sm flex="15">{{ item.date }}</span>
+                        <span hide-xs flex="10">{{ item.length }}</span>
+                        <md-button aria-label="button-label" class="md-icon-button m-common-song-play-btn" ng-click="vm.playSongAt($index)">
+                            <md-icon class="material-icons">play_arrow</md-icon>
+                        </md-button>
+                        <md-button hide-xs aria-label="button-label" class="md-icon-button m-common-song-download-btn" ng-click="vm.downloadSongAt($index)">
+                            <md-icon class="material-icons">file_download</md-icon>
+                        </md-button>
+                    </div>
+                    <md-divider></md-divider>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section ng-show="vm.photo.isEnable">
+        <div layout="column" class="m-template-home-photo">
+            <a href="" ui-sref="{{vm.homeState + '.photo'}}">
+                <p class="md-title" align="center">
+                    <span data-translate="template.favor.photos">Favorite Photos</span>
+                    <md-icon aria-label="keyboard_arrow_down" class="material-icons"> keyboard_arrow_down </md-icon>
+                </p>
+            </a>
+            <div class="m-photo-normal-form" layout="column" layout-align="center center">
+                <div class="m-common-content-item" layout-padding layout="column" layout-align="center center" ng-repeat="item in vm.photos">
+                    <img ng-src="{{item.tempLink}}" />
+                    <div>
+                        <md-button aria-label="button-label" class="md-icon-button m-common-view-btn" ng-click="vm.viewPhoto(item)">
+                            <md-icon class="material-icons">remove_red_eye</md-icon>
+                        </md-button>
+                        <span>{{item.des}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m-photo-beautiful-form" hidden>
+                <div layout="column" layout-align="center center">
+                    <div class="m-common-content-item" layout-padding ng-repeat="item in vm.photos">
+                        <div layout="row">
+                            <img ng-src="{{item.tempLink}}"  flex />
+                            <div flex>
+                                <md-button aria-label="button-label" class="md-icon-button m-common-view-btn" ng-click="vm.viewPhoto(item)">
+                                    <md-icon class="material-icons">remove_red_eye</md-icon>
+                                </md-button>
+                                <b>{{item.name}}</b>
+                                <p>{{item.des}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

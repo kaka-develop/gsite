@@ -1,0 +1,586 @@
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+    color: white;
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+.main-content {
+    height: 100vh;
+    box-shadow: -5px 0 5px -5px #333;
+}
+
+// toolbar.html
+.m-toolbar {
+    width: 100%;
+    height: 56px;
+    position: absolute;
+    .m-toolbar-search-box {
+        font-size: 16px;
+        padding-bottom: 0px;
+        margin-left: 5px;
+    }
+}
+
+// sidenav.html
+.m-sidenav {
+    .m-sidnav-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .m-sidenav-language {
+        height: 20px;
+    }
+    md-list-item {
+        md-icon {
+            font-size: 25px;
+            margin-right: 20px;
+            color: #78909C;
+        }
+        span {
+            font-size: 20px;
+        }
+    }
+    .m-sidenav-header {
+        background-image: url('/content/images/other/sidenav-header.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        padding: 20px;
+        height: 165px;
+    }
+}
+
+.m-custom-sidenav {
+    width: 100%;
+    background-color: white;
+    .m-sidnav-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .m-sidenav-language {
+        height: 20px;
+    }
+    md-content {
+        background-color: white;
+    }
+    md-list-item {
+        md-icon {
+            font-size: 25px;
+            margin-right: 20px;
+            color: #78909C;
+        }
+        span {
+            font-size: 20px;
+        }
+    }
+    .m-sidenav-header {
+        background-image: url('/content/images/other/sidenav-header.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        padding: 20px;
+        height: 200px;
+    }
+}
+
+.m-common-panel {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    .m-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+md-input-container {
+    margin: 0px;
+}
+
+.m-card-actions {
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+
+.m-item-actions {
+    padding-top: 5px;
+}
+
+.m-common-view-panel {
+    @extend .m-common-panel;
+}
+
+// home.html
+.m-home {
+    .m-home-bg {
+        width: 100%;
+        height: 320px;
+    }
+    .m-home-panel {
+        @extend .m-common-panel;
+        div {
+            margin: 20px;
+            color: white;
+            font-size: 20px;
+            font-style: italic;
+        }
+    }
+    .m-home-sec {
+        @extend .m-common-panel;
+        background-color: #607D8B;
+        color: white;
+    }
+    .m-home-feature-list {
+        i {
+            color: lawngreen;
+        }
+    }
+    .m-features {
+        background-color: white;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+.m-common-toolbar {
+    background-image: url('/content/images/bg/bg-menu.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 56px;
+}
+
+// templates.html
+.m-templates {
+    padding-top: 20px;
+    .m-templates-sort-btn {
+        width: 80px;
+        margin-left: 20px;
+        margin-bottom: 0px;
+        background-color: white;
+    }
+    .m-templates-search-btn {
+        width: 80px;
+        margin-right: 20px;
+        margin-bottom: 0px;
+        background-color: white;
+    }
+}
+
+// quicktool.html
+.m-quicktool {
+    position: fixed !important;
+}
+
+.transparent {
+    background-color: transparent !important;
+}
+
+.right {
+    float: right;
+}
+
+.text-right {
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+.m-template-toolbar {
+    md-select {
+        color: white;
+        font-size: 16px;
+    }
+}
+
+.m-normal-text {
+    text-transform: none !important;
+    font-size: 16px;
+}
+
+// footer.html
+.m-footer {
+    a {
+        color: #78909C;
+        margin-right: 10px;
+    }
+    h2 {
+        color: #78909C;
+    }
+}
+
+.m-common-button {
+    z-index: 20;
+    line-height: 48px;
+    min-width: 0;
+    width: 48px;
+    height: 48px;
+    margin: 5px;
+    vertical-align: middle;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+    border: 0;
+    background-clip: padding-box;
+    background-color: transparent;
+    overflow: hidden;
+    -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    -webkit-transition-property: background-color, box-shadow, -webkit-transform;
+    transition-property: background-color, box-shadow, -webkit-transform;
+    transition-property: background-color, box-shadow, transform;
+    transition-property: background-color, box-shadow, transform, -webkit-transform;
+    outline: none;
+}
+
+.m-common-google-btn {
+    @extend .m-common-button;
+    border-radius: 50%;
+    background-image: url('/content/images/icons/google-plus.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.m-common-facebook-btn {
+    @extend .m-common-button;
+    border-radius: 50%;
+    background-image: url('/content/images/icons/facebook.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.m-common-twitter-btn {
+    @extend .m-common-button;
+    border-radius: 50%;
+    background-image: url('/content/images/icons/twitter.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.m-common-mail-btn {
+    @extend .m-common-button;
+    border-radius: 50%;
+    background-image: url('/content/images/icons/mail.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.m-common-paypal-btn {
+    background-image: url('/content/images/icons/paypal.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.m-common-creditcard-btn {
+    background-image: url('/content/images/icons/credit-card.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+// ripple for social login buttons
+button[md-ink-ripple] {
+    color: white;
+    position: relative;
+}
+
+.blue {
+    color: blue;
+}
+
+.white {
+    color: white;
+}
+
+.white-bg {
+    background-color: white !important;
+}
+
+.black {
+    color: black;
+}
+
+.red-active {
+    color: #FF5722 !important;
+}
+
+.m-common-content-item {
+    @extend .white-bg;
+}
+
+.m-template-song-item {
+    @extend .white-bg;
+}
+
+.m-settings-panel {
+    @extend .white-bg;
+}
+
+.m-person-avatar {
+    width: 30px;
+    height: 30px;
+}
+
+.md-card-image {
+    width: 100%;
+    height: 200px;
+}
+
+// alert.html
+.m-toast {
+    width: 180px;
+    left: 8px;
+    top: 10px;
+    position: fixed;
+}
+
+.m-toast-error {
+    .md-toast-content {
+        background-color: #FF5722;
+    }
+}
+
+.m-toast-warning {
+    .md-toast-content {
+        background-color: orange;
+    }
+}
+
+.error-text {
+    color: red;
+}
+
+// my-website-share.html
+.m-webshare {
+    width: 100%;
+    height: 150px;
+    position: fixed;
+}
+
+.m-notifications {
+    md-icon {
+        margin-right: 20px;
+    }
+}
+
+.m-1-line {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.m-color-picker {
+    height: 65px;
+}
+
+// m-home.html
+.m-template-home {
+    .m-template-home-avatar {
+        width: 100%;
+        height: 200px;
+    }
+    .m-template-home-photo {
+        img {
+            width: 100%;
+            height: 180px;
+        }
+    }
+}
+
+// m-basic-info.html
+.m-template-info {
+    .m-template-info-panel {
+        padding: 20px;
+    }
+}
+
+// m-footer.html
+.m-template-footer {
+    a {
+        margin-right: 10px;
+    }
+}
+
+// m-audio-player.html
+.m-template-audio-player {
+    position: fixed;
+    bottom: 0px;
+    color: white;
+    background-color: blue;
+    width: 100%;
+    text-align: center;
+}
+
+// m-photo.html
+.m-template-photo {
+    .m-common-content-item {
+        img {
+            width: 100%;
+            height: 180px;
+        }
+    }
+}
+
+// m-photo-view-dialog.html
+.m-template-photo-dialog {
+    padding: 5px;
+    img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+// m-sidenav-list.html
+.m-template-sidenav-list {
+    md-list-item {
+        md-icon {
+            color: black;
+        }
+    }
+}
+
+.m-template-home-dialog {
+    img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+}
+
+// basic template style
+.m-basic-template-style {
+    .m-template-home-photo {
+        img {
+            width: 50%;
+            height: 100px;
+        }
+    }
+    md-divider {
+        display: none;
+    }
+    md-toolbar {
+        background-color: #283593;
+    }
+    .m-template-audio-player {
+        background-color: #283593;
+    }
+    .m-template-sidenav-list {
+        md-list-item {
+            i,
+            md-icon {
+                display: none;
+            }
+        }
+    }
+}
+
+// Latest template style
+.m-latest-template-style {
+    .m-template-toolbar {
+        .md-toolbar-tools {
+            background-color: #607D8B;
+        }
+    }
+    md-divider {
+        display: none;
+    }
+    .md-title {
+        color: #4F6F7B;
+    }
+    footer a {
+        color: #4F6F7B;
+    }
+    .m-template-audio-player {
+        background-color: #607D8B;
+    }
+}
+
+// beautiful template style
+.m-beautiful-template-style {
+    md-toolbar {
+        background-image: url('/content/images/bg/bg-menu-blue.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    }
+    .m-common-content-item {
+        padding: 0px;
+        margin: 6px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    }
+    .m-common-song-play-btn {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        background-color: #3F51B5;
+        md-icon {
+            color: white;
+        }
+    }
+    .m-common-song-play-btn:hover {
+        md-icon {
+            color: black;
+        }
+    }
+    .m-common-song-download-btn {
+        @extend .m-common-song-play-btn
+    }
+    .m-common-view-btn {
+        md-icon {
+            color: #3F51B5;
+        }
+    }
+    .md-title {
+        color: #4F6F7B;
+    }
+    footer a {
+        color: #4F6F7B;
+    }
+    .m-template-song-panel {
+        @extend .m-common-content-item;
+    }
+    .m-common-photo-item {
+        @extend .m-common-content-item;
+        margin: 5px;
+    }
+    .m-template-audio-player {
+        background-image: url('/content/images/bg/bg-menu-blue.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        box-shadow: 0px -1px 3px -1px rgba(0, 0, 0, 0.2), 0px -1px 1px -1px rgba(0, 0, 0, 0.14), 0px -2px 1px -1px rgba(0, 0, 0, 0.12);
+    }
+}
+
+th,
+td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.bg-success {
+    background-color: greenyellow;
+}
+
+.bg-warning {
+    background-color: orange;
+}
+
+
+.bg-info {
+    background-color: deepskyblue;
+}
+
+.bg-primary {
+    background-color: orangered;
+}
+.m-upload-panel{
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}
+

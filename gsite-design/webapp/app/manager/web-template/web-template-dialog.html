@@ -1,0 +1,33 @@
+<div layout-padding>
+    <div layout-padding class="md-whiteframe-1dp">
+        <span hide-xs class="md-title">Create or edit an web template</span>
+        <form name="Form" layout="column">
+            <md-input-container >
+                <label>Name</label>
+                <input type="text" name="name" ng-minlength="2" ng-model="vm.webTemplate.name" required/>
+            </md-input-container>
+            <md-input-container>
+                <label>Rating</label>
+                <input type="number" name="rating" ng-model="vm.webTemplate.rating" required/>
+            </md-input-container>
+            <md-input-container >
+                <label>Category</label>
+                <input type="text" name="name" ng-minlength="2" ng-model="vm.webTemplate.category" required/>
+            </md-input-container>
+            <md-input-container >
+                <label>Source</label>
+                <md-select ng-model="vm.webTemplate.source" required>
+                    <md-option ng-repeat="item in vm.sources" value="{{item}}">{{item}}</md-option>
+                </md-select>
+            </md-input-container>
+        </form>
+
+        <div layout="row" >
+            <md-button ng-click="vm.save()" ng-disabled="!Form.$valid" class="md-raised md-primary">Save</md-button>
+            <span flex></span>
+            <md-button ng-click="vm.closeDialog()" class="md-raised right">Cancel</md-button>
+        </div>
+
+        </form>
+    </div>
+</div>

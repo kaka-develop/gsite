@@ -1,0 +1,20 @@
+<md-card>
+    <md-card-content>
+        <p class="md-title" data-translate="myQuestion.title">Question</p>
+        <form name="Form" layout="column" ng-submit="vm.submit()">
+            <md-input-container>
+                <label data-translate="myQuestion.content">Content</label>
+                <input type="text" name="content" ng-minlength="6" ng-model="vm.question.content" required/>
+                <div ng-messages="Form.content.$error">
+                    <div ng-message="required" data-translate="global.form.error.des">This is required. More than 6 characters</div>
+                </div>
+            </md-input-container>
+
+            <div layout="row">
+                <button ng-disabled="!Form.$valid" class="md-button  md-raised md-primary" data-translate="global.form.send">Send</button>
+                <span flex></span>
+                <md-button ng-click="vm.closeDialog()" class="md-raised right" data-translate="global.form.cancel">Cancel</md-button>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,8 @@
+version: '2'
+services:
+  gsite-mongodb-shard:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        image: ainguyen/gsite-mongodb-shard
+        command: mongod --replSet rs1 --noprealloc --smallfiles

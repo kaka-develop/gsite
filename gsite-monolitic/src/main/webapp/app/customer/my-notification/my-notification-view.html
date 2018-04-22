@@ -1,0 +1,13 @@
+<div class="m-common-toolbar">
+</div>
+<div class="m-notifications-view" layout-padding layout-gt-sm="row" layout-align-gt-sm="center center">
+    <div class="m-common-panel" md-whiteframe="1">
+        <div layout="row">
+            <md-button ui-sref="my-notification" class="md-raised md-primary">Back</md-button>
+            <md-button ui-sref="my-notification.delete({id: vm.notification.id})" class="md-raised md-warn">Delete</md-button>
+        </div>
+        <p class="md-title">{{vm.notification.title}}</p>
+        <p class="md-subhead">{{vm.notification.content}}
+            <p>
+    </div>
+</div>

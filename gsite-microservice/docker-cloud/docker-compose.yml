@@ -1,0 +1,97 @@
+version: '3'
+services:
+#######
+    gsite-mongo-express:
+        image: ainguyen/gsite-mongo-express
+        ports:
+            - 9001:8081
+        environment:
+            - ME_CONFIG_MONGODB_SERVER=gsite-mongodb-mongos
+        depends_on:
+            - gsite-mongodb-mongos
+        networks: 
+            - gsite-app
+
+    gsite-mongodb-mongos:
+        image: mongo:3.2.10
+        volumes:
+            - /root/mongo_db:/data/db/
+        networks:
+            gsite-app:
+               aliases:
+                    - mongos  
+####                    
+    gsite-cache-member:
+        image: ainguyen/gsite-cache-member
+        networks:
+            - gsite-app
+        deploy:
+            replicas: 1
+            update_config:
+                parallelism: 1  
+                delay: 10s
+            restart_policy:
+                condition: on-failure
+    gsite-web:
+        image: ainguyen/gsite-micro-web
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://mongos:27017
+            - SPRING_DATA_MONGODB_DATABASE=gsite
+            - GSITEMANAGER_RIBBON_LISTOFSERVERS=gsite-manager:8082
+            - GSITECUSTOMER_RIBBON_LISTOFSERVERS=gsite-customer:8081
+        ports:
+            - 443:8080
+        networks:
+            - gsite-app
+        depends_on:
+            - gsite-manager
+            - gsite-customer    
+        deploy:
+            replicas: 2
+            update_config:
+                parallelism: 1  
+                delay: 30s
+            restart_policy:
+                condition: on-failure
+    gsite-manager:
+        image: ainguyen/gsite-micro-manager
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://mongos:27017
+            - SPRING_DATA_MONGODB_DATABASE=gsite
+        ports:
+            - 8081:8081
+        networks:
+            - gsite-app
+        depends_on:
+            - gsite-cache-member    
+        deploy:
+            replicas: 3
+            update_config:
+                parallelism: 1  
+                delay: 30s
+            restart_policy:
+                condition: on-failure
+    gsite-customer:
+        image: ainguyen/gsite-micro-customer
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://mongos:27017
+            - SPRING_DATA_MONGODB_DATABASE=gsite
+        ports: 
+            - 8082:8082
+        networks:
+            - gsite-app
+        depends_on:
+            - gsite-cache-member    
+        deploy:
+            replicas: 3
+            update_config:
+                parallelism: 1  
+                delay: 30s
+            restart_policy:
+                condition: on-failure
+networks:
+    gsite-app:
+       external: true

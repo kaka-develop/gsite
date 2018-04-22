@@ -1,0 +1,44 @@
+<h2 data-translate="feedback.title">Feedbacks</h2>
+<div>
+    <table layout-fill>
+        <thead>
+        <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+            <th>
+                <md-button ui-sref="feedback.new" class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">add</i>
+                </md-button>
+            </th>
+            <th><span data-translate="global.form.title">Title</span></th>
+            <th hide-xs hide-sm><span data-translate="feedback.content">Content</span></th>
+            <th hide-xs><span data-translate="global.form.created">Created</span></th>
+            <th hide-xs hide-gt-xs><span data-translate="feedback.user">User</span></th>
+
+        </tr>
+        </thead>
+        <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+        <tr ng-repeat="feedback in vm.feedbacks track by feedback.id">
+            <td>
+                <div class="m-item-actions" layout="row" layout-align="start center">
+                    <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-warn"
+                               ui-sref="feedback.delete({id: feedback.id})">
+                        <i class="material-icons">delete</i>
+                    </md-button>
+                    <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-primary"
+                               ui-sref="feedback.edit({id: feedback.id})">
+                        <i class="material-icons">edit</i>
+                    </md-button>
+                    <md-button class="md-icon-button md-raised md-primary" ui-sref="feedback.detail({id:feedback.id})">
+                        <i class="material-icons">remove_red_eye</i>
+                    </md-button>
+                </div>
+            </td>
+            <td>{{feedback.title}}</td>
+            <td hide-xs hide-sm>{{feedback.content}}</td>
+            <td hide-xs>{{feedback.created | date:'medium'}}</td>
+            <td hide-xs hide-gt-xs>{{feedback.user_id}}</td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>

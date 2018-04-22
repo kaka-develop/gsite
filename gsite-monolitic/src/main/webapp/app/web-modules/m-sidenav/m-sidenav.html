@@ -1,0 +1,47 @@
+<md-sidenav class="md-sidenav-left m-sidenav" md-component-id="m-sidenav" md-whiteframe="4" style="background-color: {{vm.sidenav.backgroundColor}}; color: {{vm.sidenav.textColor}}">
+    <md-toolbar class="md-theme-indigo" style="background-color: {{vm.sidenav.barColor}}">
+        <h1 class="md-toolbar-tools">{{vm.sidenav.title}}</h1>
+    </md-toolbar>
+    <md-content>
+        <md-list class="m-template-sidenav-list">
+            <md-list-item class="md-2-line" ui-sref="{{vm.homeState}}" ng-click="vm.toggleLeft()">
+                <i class="material-icons" flex="15">home</i>
+                <div class="md-list-item-text" layout="column" flex>
+                    <h3>Home</h3>
+                    <h4>Welcome to my website</h4>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-2-line" ui-sref="{{vm.homeState + '.info'}}" ng-click="vm.toggleLeft()">
+                <i class="material-icons" flex="15">person</i>
+                <div class="md-list-item-text" layout="column" flex>
+                    <h3>Information</h3>
+                    <h4>Overview of what you should know</h4>
+                </div>
+            </md-list-item>
+            <md-list-item ng-show="vm.website.custom.photo.isEnable" class="md-2-line"  ui-sref="{{vm.homeState + '.photo'}}" ng-click="vm.toggleLeft()">
+                <i class="material-icons" flex="15">photo_library</i>
+                <div class="md-list-item-text" layout="column" flex>
+                    <h3>Photos</h3>
+                    <h4>Album contain all photo of reciever</h4>
+                </div>
+            </md-list-item>
+            <md-list-item ng-show="vm.website.custom.song.isEnable" class="md-2-line"  ui-sref="{{vm.homeState + '.song'}}" ng-click="vm.toggleLeft()">
+                <i class="material-icons" flex="15">library_music</i>
+                <div class="md-list-item-text" layout="column" flex>
+                    <h3>Songs</h3>
+                    <h4>All favorite songs and their playlist</h4>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-2-line">
+                <div layout="row" layout-fill>
+                    <md-icon class="material-icons" flex="15">language</md-icon>
+                    <md-select ng-model="vm.lang" aria-label="Language">
+                        <md-option value="en" ng-selected="true">English</md-option>
+                        <md-option value="vi">Vietnamese</md-option>
+                    </md-select>
+                    <span flex></span>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>

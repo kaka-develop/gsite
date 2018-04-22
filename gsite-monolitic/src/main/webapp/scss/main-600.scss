@@ -1,0 +1,104 @@
+@media only screen and (min-width: 600px) {
+  // home.html
+  .m-home {
+    .m-home-panel {
+      width: 100%;
+      height: 380px;
+      padding: 50px;
+      background-image: url('/content/images/bg/bg-home-panel.jpg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      p {
+        color: white;
+        font-size: 20px;
+      }
+    }
+    div {
+      .m-home-panel-title {
+        font-size: 60px;
+      }
+    }
+  }
+
+  .m-template-home {
+    .m-template-home-photo {
+      .m-common-content-item {
+        width: 80%;
+      }
+    }
+  }
+  // register.html
+  .m-register {
+    form {
+      width: 70%;
+    }
+  }
+  // templates.html
+  .m-templates {
+    .m-templates-card {
+      width: 60%;
+    }
+  }
+  // websites.html
+  .m-websites {
+    .m-websites-card {
+      width: 60%;
+    }
+  }
+  // settings.html
+  .m-settings {
+    .m-settings-panel {
+      width: 70%;
+    }
+  }
+  // m-photo.html
+  .m-template-photo {
+    .m-common-content-item {
+      img {
+        width: 60%;
+      }
+    }
+  }
+  // website-payment.html
+  .m-webpayment {
+    form {
+      width: 70%;
+    }
+  }
+  // my-website-custom.html
+  .m-webcustom {
+    form {
+      width: 70%;
+    }
+  }
+  .m-beautiful-template-style {
+    .m-template-home-avatar {
+      height: 330px;
+    }
+    .m-hide-photo-form {
+      .m-photo-normal-form {
+        display: none;
+      }
+      .m-photo-beautiful-form {
+        display: block;
+        p {
+          margin-left: 15px;
+        }
+      }
+    }
+    .m-template-home-photo {
+      @extend .m-hide-photo-form;
+    }
+    .m-template-photo {
+      @extend .m-hide-photo-form;
+      img {
+        height: 200px;
+      }
+    }
+  }
+  .m-template-photo-dialog {
+    img {
+      height: 280px;
+    }
+  }
+}

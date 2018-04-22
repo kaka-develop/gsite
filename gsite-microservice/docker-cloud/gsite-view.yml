@@ -1,0 +1,7 @@
+version: '2'
+services:
+  gsite-view:
+        build:
+            context: ../gsite-view
+        image: ainguyen/gsite-micro-view
+        volumes: ["../gsite-view/www:/usr/share/nginx/html"]

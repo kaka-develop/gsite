@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fnil\fcharset0 Monaco;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red14\green14\blue14;\red249\green249\blue249;\red0\green0\blue0;
+\red247\green238\blue241;\red184\green14\blue61;\red38\green38\blue38;\red255\green255\blue255;\red14\green114\blue164;
+\red242\green242\blue242;\red210\green0\blue53;\red14\green110\blue109;\red0\green0\blue0;\red255\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c6667\c6667\c6667;\cssrgb\c98039\c98039\c98039\c70196;\csgenericrgb\c0\c0\c0;
+\cssrgb\c97647\c94902\c95686;\cssrgb\c78039\c14510\c30588;\cssrgb\c20000\c20000\c20000;\csgenericrgb\c100000\c100000\c100000;\cssrgb\c0\c52549\c70196;
+\cssrgb\c96078\c96078\c96078;\cssrgb\c86667\c6667\c26667;\cssrgb\c0\c50196\c50196;\csgray\c0;\csgray\c100000;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww20280\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+docker start $(docker ps -a -q)\
+docker stop $(docker ps -a -q)
+\fs32 \
+
+\fs26 docker rm $(docker ps -a -q)
+\f1\fs27 \cf4 \cb5 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf6 ./gradlew clean bootRepackage -Pprod buildDocker\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls1\ilvl0\cf6 docker-compose -f src/main/docker/app.yml up
+\f2\fs30 \cf7 \cb1 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f1\fs27 \cf6 \cb5 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \
+docker-compose -f src/main/docker/mongodb-cluster.yml build\
+\
+docker-compose -f src/main/docker/mongodb-cluster.yml up -d\
+\
+docker-compose -f src/main/docker/mongodb-cluster.yml scale gsite-mongodb-node=3\
+\
+docker container exec -it docker_gsite-mongodb-node_1 mongo --eval 'var param=3, folder="docker"' init_replicaset.js\
+\
+docker container exec -it gsite-mongodb mongo --eval 'sh.addShard("rs1/docker_gsite-mongodb-node_1:27017")'\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf6 docker-compose -f src/main/docker/app.yml up -d gsite-app\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf6 \cb8 \
+\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f3\fs26 \cf9 \cb1 eval\cf7 \cb10  \cf11 \cb1 "\cf12 $(docker-machine env local)\cf11 "\
+\
+\cf9 eval\cf7 \cb10  \cb1 $(\cb10 docker-machine env --swarm master\cb1 )\cf11 \
+
+\f1\fs27 \cf6 \cb8 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf13 \cb14 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+}

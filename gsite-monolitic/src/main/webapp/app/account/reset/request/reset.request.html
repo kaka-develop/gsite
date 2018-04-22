@@ -1,0 +1,33 @@
+<div class="m-common-toolbar">
+</div>
+
+<div class="m-common-panel md-whiteframe-1dp" layout="column" layout-align="center center">
+    <h1 data-translate="reset.request.title">Reset your password</h1>
+
+    <div  layout="column" layout-align="center center" ng-show="vm.errorEmailNotExists">
+        <strong class="error-text" data-translate="reset.request.messages.notfound.title">E-Mail address isn't registered!</strong>
+        <p  data-translate="reset.request.messages.notfound.subtitle">Please check and try again.</p>
+    </div>
+    <div>
+        <p data-translate="reset.request.messages.success" ng-show="vm.success">Please check your e-mails.</p>
+    </div>
+    <div>
+        <p data-translate="reset.request.messages.info" ng-show="!vm.success">Enter the e-mail address you used to register.</p>
+    </div>
+    <form name="Form" ng-show="!vm.success">
+        <md-input-container layout-fill>
+            <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">email</md-icon>
+            <label data-translate="global.form.email">Email</label>
+            <input id="emailInput" type="email" name="email" ng-model="vm.resetAccount.email" ng-pattern="/^.+@.+\..+$/" md-autofocus required/>
+            <div ng-messages="Form.email.$error">
+                <div ng-message-exp="['required', 'pattern']" data-translate="global.form.error.email">This is required and must be valid email </div>
+            </div>
+        </md-input-container>
+
+        <div layout="row" layout-fill>
+            <md-button ng-disabled="!Form.$valid" ng-click="vm.requestReset()" class="md-raised md-primary" data-translate="global.form.reset">Reset</md-button>
+            <span flex></span>
+            <md-button ui-sref="home" ng-click="vm.cancel()" class="md-raised right" data-translate="global.form.cancel">Cancel</md-button>
+        </div>
+    </form>
+</div>

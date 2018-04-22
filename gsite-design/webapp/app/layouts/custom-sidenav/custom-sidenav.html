@@ -1,0 +1,70 @@
+<div class="m-custom-sidenav" layout="column">
+    <div class="m-sidenav-header" layout="row" layout-align="left center">
+        <div>
+            <img ng-src="/content/images/other/avatar.jpg" class="md-avatar m-sidnav-avatar" />
+            <p>
+                <b>John Terry</b> <br/>
+                <span>johnterry@gmail.com</span>
+            </p>
+        </div>
+    </div>
+    <md-content>
+        <md-list-item ui-sref="home">
+            <div layout="row">
+                <md-icon class="material-icons"> home </md-icon>
+                <span>Home</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="user-management">
+            <div layout="row">
+                <md-icon class="material-icons"> insert_chart </md-icon>
+                <span>Administration</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="web-template">
+            <div layout="row">
+                <md-icon class="material-icons"> dashboard </md-icon>
+                <span>Management</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="template">
+            <div layout="row">
+                <md-icon class="material-icons">view_modules</md-icon>
+                <span>Templates</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="my-website">
+            <div layout="row">
+                <md-icon class="material-icons">web</md-icon>
+                <span>My websites</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="my-notification">
+            <div layout="row">
+                <md-icon class="material-icons red-active">notifications_active</md-icon>
+                <span>My notifications</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="my-question">
+            <div layout="row">
+                <md-icon class="material-icons">help</md-icon>
+                <span>Support</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="settings">
+            <div layout="row">
+                <md-icon class="material-icons">settings</md-icon>
+                <span>Settings</span>
+            </div>
+        </md-list-item>
+        <md-list-item class="m-sidnav-language">
+            <div layout="row">
+                <md-icon class="material-icons">language</md-icon>
+                <md-select ng-model="vm.lang" aria-label="Language">
+                    <md-option value="en" ng-selected="true">English</md-option>
+                    <md-option value="vi">Vietnamese</md-option>
+                </md-select>
+            </div>
+        </md-list-item>
+    </md-content>
+</div>

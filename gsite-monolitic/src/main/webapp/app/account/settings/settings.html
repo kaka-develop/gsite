@@ -1,0 +1,54 @@
+<form class="m-settings" name="Form" layout-padding layout-gt-xs="row" layout-align-gt-xs="center center"
+      ng-submit="vm.save()">
+    <md-content class="md-no-momentum m-settings-panel" layout-padding md-whiteframe="1">
+        <h2 data-translate="settings.title">Basic information</h2>
+        <md-input-container class="md-icon-float md-block">
+            <md-icon style="color:black" class="material-icons">person</md-icon>
+            <label data-translate="global.form.firstName">First name</label>
+            <input name="firstName" ng-model="vm.settingsAccount.firstName" type="text" minlength="3"
+                   ng-required="true">
+            <div ng-messages="Form.firstName.$error">
+                <div ng-message-exp="['required', 'minlength']" data-translate="global.form.error.username">
+                    This is required and more than 3 characters
+                </div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <md-icon style="color:black" class="material-icons">person</md-icon>
+            <label data-translate="global.form.lastName">Last name</label>
+            <input name="lastName" ng-model="vm.settingsAccount.lastName" type="text" minlength="3" ng-required="true">
+            <div ng-messages="Form.lastName.$error">
+                <div ng-message-exp="['required', 'minlength']" data-translate="global.form.error.username">
+                    This is required and more than 3 characters
+                </div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <md-icon style="color:black" class="material-icons">email</md-icon>
+            <lable data-translate="global.form.email">Email</lable>
+            <input ng-model="vm.settingsAccount.email" name="email" type="email" ng-required="true" aria-label="Email"
+                   ng-pattern="/^.+@.+\..+$/">
+            <div ng-messages="Form.email.$error">
+                <div ng-message-exp="['required', 'pattern']" data-translate="global.form.error.email">This
+                    Tis required and must be valid email
+                </div>
+            </div>
+        </md-input-container>
+        <md-input-container>
+            <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">language</md-icon>
+            <label data-translate="global.form.language">Language</label>
+            <md-select ng-model="vm.settingsAccount.langKey" name="lang" required>
+                <md-option value="en">English</md-option>
+                <md-option value="vi">Vietnamese</md-option>
+            </md-select>
+            <div ng-messages="Form.lang.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+            <p></p>
+        </md-input-container>
+        <div layout="row">
+            <button ng-disabled="!Form.$valid" class="md-button  md-raised md-primary" data-translate="global.form.save">Save</button>
+            <md-button class="md-raised" ng-click="vm.cancel()" data-translate="global.form.cancel">Cancel</md-button>
+        </div>
+    </md-content>
+</form>

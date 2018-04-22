@@ -1,0 +1,86 @@
+<div class="m-custom-sidenav" layout="column">
+    <div class="m-sidenav-header" layout="row" layout-align="left center" ng-show="vm.isAuthenticated()">
+        <div>
+            <md-list-item>
+                <img ng-src="{{vm.userImage ? vm.userImage : '/content/images/icons/avatar.jpg'}}"
+                     class="md-avatar m-sidnav-avatar"/>
+            </md-list-item>
+            <div>
+                <b>{{vm.username}}</b> <br/>
+                <span>{{vm.userEmail}}</span>
+            </div>
+            <p></p>
+        </div>
+    </div>
+    <div class="m-sidenav-header" layout="row" layout-align="left center" ng-show="!vm.isAuthenticated()">
+        <div>
+            <md-button class="md-fab" aria-label="Eat cake" ng-click="vm.showLoginDialog()">
+                <md-icon class="material-icons">perm_identity</md-icon>
+            </md-button>
+            <strong data-translate="global.menu.des.login">Login and have fun!</strong>
+        </div>
+    </div>
+    <md-content>
+        <md-list-item ng-click="vm.goHomeSec()">
+            <div layout="row">
+                <md-icon class="material-icons"> home</md-icon>
+                <span data-translate="global.menu.home">Home</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="user-management" ng-show="vm.isAuthenticated()" has-authority="ROLE_ADMIN">
+            <div layout="row">
+                <md-icon class="material-icons" >insert_chart</md-icon>
+                <span data-translate="global.menu.admin">Administration</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="web-template" ng-show="vm.isAuthenticated()" has-authority="ROLE_MANAGER">
+            <div layout="row">
+                <md-icon class="material-icons"> dashboard</md-icon>
+                <span data-translate="global.menu.manage">Management</span>
+            </div>
+        </md-list-item>
+        <md-list-item ng-click="vm.goTemplateSec()">
+            <div layout="row">
+                <md-icon class="material-icons">view_modules</md-icon>
+                <span data-translate="global.menu.template">Templates</span>
+            </div>
+        </md-list-item>
+        <md-list-item ng-click="vm.goFeatureSec()" ng-hide="vm.isAuthenticated()">
+            <div layout="row">
+                <md-icon class="material-icons">featured_play_list</md-icon>
+                <span data-translate="global.menu.feature">Features</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="my-website" ng-show="vm.isAuthenticated()">
+            <div layout="row">
+                <md-icon class="material-icons">web</md-icon>
+                <span data-translate="global.menu.web">My websites</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="my-notification" ng-show="vm.isAuthenticated()">
+            <div layout="row">
+                <md-icon class="material-icons">notifications_active</md-icon>
+                <span data-translate="global.menu.noti">My notifications</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="faq">
+            <div layout="row">
+                <md-icon class="material-icons">question_answer</md-icon>
+                <span data-translate="global.menu.faq.title">FAQ</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="my-question" ng-show="vm.isAuthenticated()">
+            <div layout="row">
+                <md-icon class="material-icons">help</md-icon>
+                <span data-translate="global.menu.support">Support</span>
+            </div>
+        </md-list-item>
+        <md-list-item ui-sref="settings" ng-show="vm.isAuthenticated()">
+            <div layout="row">
+                <md-icon class="material-icons">settings</md-icon>
+                <span data-translate="global.menu.setting">Settings</span>
+            </div>
+        </md-list-item>
+
+    </md-content>
+</div>

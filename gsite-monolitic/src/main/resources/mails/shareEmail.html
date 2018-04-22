@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>GSite share</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p th:text="#{email.share.greeting(${toName})}">
+            Dear
+        </p>
+        <p th:text="#{email.share.text1(${fromName})}">
+            just give a website please visit it
+        </p>
+        <p th:text="#{email.share.content}">
+            Please visit this url below to see your gift website:
+        </p>
+        <a th:href="@{|${baseUrl}/#/share/${webId}|}">Your shared website</a>
+        <p th:text="#{email.share.notice}"></p>
+        <p>
+            <span th:text="#{email.share.text2}">Regards, </span>
+            <br/>
+            <em th:text="#{email.signature}">GSite.</em>
+        </p>
+    </body>
+</html>

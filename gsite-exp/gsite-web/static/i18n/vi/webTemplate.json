@@ -1,0 +1,12 @@
+{
+    "webTemplate": {
+        "title": "Các trang mẫu",
+        "name": "Tên",
+        "rating": "Đánh giá",
+        "category": "Thể loại",
+        "source": "Nguồn",
+        "date": "Thời gian",
+        "price": "Giá",
+        "info": "Thông tin trang mẫu"
+    }
+}

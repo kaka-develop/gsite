@@ -1,0 +1,42 @@
+<h2 data-translate="website.title">Websites</h2>
+<div>
+    <table layout-fill>
+        <thead>
+            <tr>
+                <th>
+                    <md-button ui-sref="website.new" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">add</i>
+                    </md-button>
+                </th>
+                <th><span data-translate="global.form.name">Name</span></th>
+                <th hide-xs><span data-translate="global.form.created">Created</span></th>
+                <th hide-xs hide-sm><span data-translate="website.user">User</span></th>
+                <th hide-xs hide-sm><span data-translate="website.template">Template</span></th>
+                <th><span data-translate="website.subdomain"> Sub Domain</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="website in vm.websites track by website.id">
+                <td>
+                    <div class="m-item-actions" layout="row" layout-align="start center">
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-warn" ui-sref="website.delete({id: website.id})">
+                            <i class="material-icons">delete</i>
+                        </md-button>
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-primary" ui-sref="website.edit({id: website.id})">
+                            <i class="material-icons">edit</i>
+                        </md-button>
+                        <md-button class="md-icon-button md-raised md-primary" ui-sref="website.detail({id:website.id})">
+                            <i class="material-icons">remove_red_eye</i>
+                        </md-button>
+                    </div>
+                </td>
+                <td>{{website.name}}</td>
+                <td hide-xs>{{website.created | date:'HH:mm dd-MM-yyyy'}}</td>
+                <td hide-xs hide-sm>{{website.user_id}}</td>
+                <td hide-xs hide-sm>{{website.template}}</td>
+                <td>{{website.domain}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

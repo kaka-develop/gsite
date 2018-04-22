@@ -1,0 +1,117 @@
+{
+    "global": {
+        "title": "Gsite",
+        "menu": {
+            "home": "Trang chủ",
+            "des": {
+                "login": "Đăng nhập GSite"
+            },
+            "template": "Trang mẫu",
+            "feature": "Tính năng",
+            "admin": "Quản trị",
+            "manage": "Quản lý",
+            "support": "Hỗ trợ",
+            "web": "Trang web",
+            "noti": "Thông báo",
+            "faq": {
+                "title": "Câu hỏi",
+                "fulltitle": "Những câu hỏi thường gặp"
+            },
+            "account": {
+                "main": "Tài khoản",
+                "settings": "Cài đặt",
+                "password": "Mật khẩu",
+                "sessions": "Phiên đăng nhập",
+                "login": "Đăng nhập",
+                "logout": "Đăng xuất",
+                "register": "Đăng ký"
+            },
+            "language": {
+                "eng": "Tiếng Anh",
+                "vie": "Tiếng Việt"
+            },
+            "setting": "Cài đặt"
+        },
+        "search": {
+            "placeholder": "Nhập từ khoá"
+        },
+        "form": {
+            "username": "Tên tài khoản",
+            "password": "Mật khẩu",
+            "confirmpassword": "Xác nhận mật khẩu",
+            "email": "E-mail",
+            "firstName": "Tên",
+            "lastName": "Họ",
+            "language": "Ngôn ngữ",
+            "des": "Mô tả",
+            "age": "Tuổi",
+            "title": "Tiêu đề",
+            "name": "Tên",
+            "fullName": "Tên đầy đủ",
+            "signup": "Đăng ký",
+            "login": "Đăng nhập",
+            "logout": "Đăng xuất",
+            "error": {
+                "login": "Tên tài khoản hoặc mật khẩu không!",
+                "username": "Yêu cầu hơn 6 ký tự",
+                "password": "Yêu cầu hơn 8 ký tự",
+                "confirmpassword": "Yêu cầu giống với mật khẩu",
+                "email": "Yêu cầu địa chỉ email đúng",
+                "register": {
+                    "username": "Tên tài khoản đã tồn tại!",
+                    "email": "Dịa chỉ email đã tồn tại!"
+                },
+                "domain": "yourdomain.gsite.com",
+                "title": "Yêu cầu hơn 3 ký tự",
+                "des": "Yêu cầu hơn 6 ký tự"
+            },
+            "reset": "Đặt lại",
+            "cancel": "Huỷ",
+            "save": "Lưu",
+            "send": "Gửi",
+            "id": "Mã",
+            "created": "Thời gian tạo",
+            "uploadImage": "Tải ảnh",
+            "back": "Quay lại",
+            "delete": "Xoá",
+            "edit": "Sửa"
+        },
+        "footer": {
+            "about": "Tìm hiểu",
+            "faq": "Câu hỏi",
+            "feedback": "Phản hồi",
+            "support": "Hỗ trợ"
+        },
+        "quicktool": {
+            "web": "Trang web",
+            "feedback": "Phản hồi",
+            "question": "Câu hỏi"
+        },
+        "name": "tên",
+        "des": "mô tả",
+        "sortby": "Xắp xếp",
+        "searchby": "Tìm kiếm",
+        "date": "thời gian",
+        "menubar": {
+            "faq": "FAQ",
+            "question": "Câu hỏi",
+            "feedback": "Phản hồi",
+            "templates": "Trang Mẫu",
+            "websites": "Trang web",
+            "questions": "Câu hỏi",
+            "feedbacks": "Phản hồi",
+            "noti": "Thông báo",
+            "users": "Người dùng",
+            "metrics": "Thống kê",
+            "health": "Trạng thái",
+            "api": "API",
+            "config": "Config",
+            "audits": "Sửa đổi",
+            "logs": "Logs"
+        },
+        "general": "Tổng quan",
+        "noti": {
+            "delete": "Bán muốn xoá {{ param }} này?"
+        }
+    }
+}

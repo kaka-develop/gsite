@@ -1,0 +1,33 @@
+@media only screen and (min-width: 1280px) {
+    .m-custom-sidenav {
+        height: 100vh;
+        width: 280px;
+
+        .m-sidenav-header {
+            height: 180px;
+        }
+        md-content {
+            margin-right: 5px;
+        }
+    }
+    .m-beautiful-template-style {
+        .m-common-content-item {
+            width: 80%;
+        }
+        .m-template-home-avatar {
+            width: 90%;
+            height: 360px;
+        }
+        .m-template-song-panel {
+            width: 80%;
+        }
+        .m-photo-beautiful-form {
+            .m-common-content-item {
+                width: 70%;
+                img {
+                    height: 200px;
+                }
+            }
+        }
+    }
+}

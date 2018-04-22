@@ -1,0 +1,73 @@
+
+management:
+    context-path: /management
+    health:
+        mail:
+            enabled: true
+spring:
+    application:
+        name: gsite
+    profiles:
+        active: #spring.profiles.active#
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+    social:
+        google:
+            clientId: 1013279057915-011ku3rgml86rk9878i1korg82fs5rdi.apps.googleusercontent.com
+            clientSecret: zGJd-pCSMIWLNUZV7VevJKld
+        facebook:
+            clientId: 940460799422307
+            clientSecret: ec8a1fb5c9bc3d102748929f6f4dbb53
+        twitter:
+            clientId: TIUAr6TEk1sFpAKnVsAcOoPjl
+            clientSecret: nlRr3spZodHp1u0JfFxwirlcbDcvgesRTINoez07vthk5mnFTQ
+
+security:
+    basic:
+        enabled: false
+
+server:
+    session:
+        cookie:
+            http-only: true
+payment:
+    paypal:
+        mode: sandbox
+        clientId: ATmfnJTpXRBIu9wwaUoEKjj6alLPhdhL4zKVmK5HgpDZkGbs8Z1Pna_j_ct5_2DkS8mlQ3bo2V9tk_dr
+        clientSecret: EIZoxGT6GpHop3JoxsXwvyS-UiGL4yaTwF-aB4XtQ89xy-XkbEn8RpYPSOM_rrL5B_eNriTyIOtVOutq
+        cancelUrl: http://localhost:9000/website-payment/
+        returnUrl: http://localhost:9000/website-payment/
+
+storage:
+    url:
+        image: /
+        
+jhipster:
+    async:
+        corePoolSize: 2
+        maxPoolSize: 50
+        queueCapacity: 10000
+    mail:
+        from: gsite@localhost
+    swagger:
+        title: gsite API
+        description: gsite API documentation
+        version: 0.0.1
+        termsOfServiceUrl:
+        contactName:
+        contactUrl:
+        contactEmail:
+        license:
+        licenseUrl:
+    social:
+        redirectAfterSignIn: "/#/home"
+    ribbon:
+        # comma separated list of profiles to show a ribbon on the GUI
+        displayOnActiveProfiles: dev

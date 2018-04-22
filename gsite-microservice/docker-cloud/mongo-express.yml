@@ -1,0 +1,7 @@
+version: '2'
+services:
+  gsite-mongo-express:
+        build:
+            context: .
+            dockerfile: mongodb/MongoExpress.Dockerfile
+        image: ainguyen/gsite-mongo-express

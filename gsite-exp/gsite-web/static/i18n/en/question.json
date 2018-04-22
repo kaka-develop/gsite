@@ -1,0 +1,10 @@
+{
+    "question": {
+        "title": "Questions",
+        "answer": "Answer",
+        "user": "User",
+        "content": "Content",
+        "info": "Question information",
+        "frequent": "Is frequent"
+    }
+}

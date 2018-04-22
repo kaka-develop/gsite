@@ -1,0 +1,28 @@
+<footer>
+    <div layout="column" layout-align="center center" class="m-template-footer">
+        <p></p>
+        <div layout="row">
+            <a  href="" ui-sref="{{vm.homeState + '.info'}}">
+                <span data-translate="template.menu.info">Information</span>
+            </a>
+            <a  href="" ui-sref="{{vm.homeState + '.song'}}" ng-show="vm.website.custom.song.isEnable">
+                <span data-translate="template.menu.songs">Songs</span>
+            </a>
+            <a  href="" ui-sref="{{vm.homeState + '.photo'}}" ng-show="vm.website.custom.photo.isEnable">
+                <span data-translate="template.menu.photos">Photos</span>
+            </a>
+        </div>
+        <h3>GSite Support</h3>
+         <div>
+            <a href="" ng-click="vm.changeEnglish()">
+                <span data-translate="template.footer.english">English</span>
+            </a>
+            <a href="" ng-click="vm.changeVietnam()">
+                <span data-translate="template.footer.vietnam">Vietnamese</span>
+            </a>
+        </div>
+        <div>
+            <p> © 2016-2017 <a ng-href="/#/">GSite</a>, Inc</p>
+        </div>
+    </div>
+</footer>

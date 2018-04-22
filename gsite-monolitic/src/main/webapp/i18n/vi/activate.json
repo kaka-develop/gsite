@@ -1,0 +1,17 @@
+{
+    "activate": {
+        "title": "Kích hoạt",
+        "messages": {
+            "success": {
+                "title": "Tài khoản của bạn đã được kích hoạt.",
+                "subtitle": "Vui lòng đăng nhặp"
+            },
+            "error": {
+                "title": "Không thể kích hoạt tài khoản của bạn!",
+                "subtitle": "Vui lòng đắng ký"
+            }
+        },
+        "signup": "Đăng ký",
+        "login": "Đăng nhập"
+    }
+}

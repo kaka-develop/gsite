@@ -1,0 +1,60 @@
+<!--Anonymous-->
+<md-card ng-show="{{!vm.isAuthenticated()}}" class="m-login-panel">
+    <div layout-padding>
+        <span ng-show="vm.authenticationError" class="error-text" data-translate="global.form.error.login">Username or password is incorrect!</span>
+    </div>
+    <md-card-content>
+        <form name="Form" layout="column" ng-submit="vm.login($event)">
+            <md-input-container>
+                <label data-translate="global.form.username">Username</label>
+                <input  id="username" type="text" name="username" ng-model="vm.username" minlength="3" md-autofocus required />
+            </md-input-container>
+            <md-input-container>
+                <label data-translate="login.form.password">Password</label>
+                <input type="password" name="password" ng-model="vm.password" required minlength="3"/>
+            </md-input-container>
+
+            <md-input-container>
+                <md-checkbox class="md-primary" type="checkbox" id="rememberMe" ng-model="vm.rememberMe" checked
+                             aria-label="Finished?">
+                    <span data-translate="login.form.rememberme"> Remember me</span>
+                </md-checkbox>
+
+            </md-input-container>
+            <div layout="column" layout-align="center center">
+                <a class="md-caption" href="" ng-click="vm.requestResetPassword() || vm.closeLoginDialog()"
+                   data-translate="login.form.forgot">Did
+                    you forget your password?</a>
+                <br/>
+            </div>
+
+            <div layout="row">
+                <button type="submit" ng-disabled="!Form.$valid"
+                        class="md-button md-raised md-primary" data-translate="login.form.submit">Login
+                </button>
+                <span flex></span>
+                <md-button ui-sref="register" ng-click="vm.closeLoginDialog()" class="md-raised md-primary right"
+                           data-translate="login.form.register">Register
+                </md-button>
+            </div>
+        </form>
+        <div layout="row" layout-align="center center">
+            <jh-social ng-provider="google"></jh-social>
+            <jh-social ng-provider="facebook"></jh-social>
+            <jh-social ng-provider="twitter"></jh-social>
+        </div>
+    </md-card-content>
+</md-card>
+
+<md-card ng-show="{{vm.isAuthenticated()}}">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>{{vm.username}}</span>
+        </div>
+    </md-toolbar>
+    <md-card-content>
+        <div layout="row" layout-fill layout-align="center">
+            <md-button ng-click="vm.logout()" class="md-raised md-warn right" data-translate="global.form.logout">Log out</md-button>
+        </div>
+    </md-card-content>
+</md-card>

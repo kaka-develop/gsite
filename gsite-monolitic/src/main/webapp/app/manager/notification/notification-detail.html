@@ -1,0 +1,48 @@
+<div>
+    <md-button ui-sref="{{vm.previousState}}" class="md-raised md-primary">Back</md-button>
+</div>
+<div>
+
+    <div class="m-content">
+        <h2 data-translate="notification.info">Notification infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                <p>
+                    <span data-translate="global.form.id">ID</span> :
+                    <b>{{vm.notification.id}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.title">Title</span> :
+                    <b>{{vm.notification.title}}</b>
+                </p>
+
+
+            </div>
+            <div flex>
+                <p>
+                    <span data-translate="notification.content">Content</span> :
+                    <b>{{vm.notification.content}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.created">Created date</span> :
+                    <b>{{vm.notification.created | date: 'medium'}}</b>
+                </p>
+
+            </div>
+
+        </div>
+        <div layout="row">
+            <span data-translate="notification.sentUsers">Sent users</span> :
+            <div layout="column">
+                <b ng-repeat="item in vm.website.sentUsers">&nbsp; {{item}}</b>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="notification.edit({id: vm.notification.id})" class="md-raised md-primary" data-translate="global.form.edit">Edit</md-button>
+    <md-button ui-sref="notification.delete({id: vm.notification.id})" class="md-raised md-warn" data-translate="global.form.delete">Delete</md-button>
+</div>

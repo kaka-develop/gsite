@@ -1,0 +1,44 @@
+<h2 data-translate="gsiteApp.website.home.title">Websites</h2>
+<div>
+    <table layout-fill>
+        <thead>
+            <tr>
+                <th>
+                    <md-button ui-sref="website.new" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">add</i>
+                    </md-button>
+                </th>
+                <th hide-xs><span data-translate="global.field.id">ID</span></th>
+                <th><span data-translate="gsiteApp.website.name">Name</span></th>
+                <th hide-xs><span data-translate="gsiteApp.website.created">Created</span></th>
+                <th hide-xs hide-sm><span data-translate="gsiteApp.website.user_id">User Id</span></th>
+                <th hide-xs hide-sm><span data-translate="gsiteApp.website.template_id">Template</span></th>
+                <th><span data-translate="gsiteApp.website.domain"> Sub Domain</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="website in vm.websites track by website.id">
+                <td>
+                    <div class="m-item-actions" layout="row" layout-align="start center">
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-warn" ui-sref="website.delete({id: website.id})">
+                            <i class="material-icons">delete</i>
+                        </md-button>
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-primary" ui-sref="website.edit({id: website.id})">
+                            <i class="material-icons">edit</i>
+                        </md-button>
+                        <md-button class="md-icon-button md-raised md-primary" ui-sref="website.detail({id:website.id})">
+                            <i class="material-icons">remove_red_eye</i>
+                        </md-button>
+                    </div>
+                </td>
+                <td hide-xs><a ui-sref="website-detail({id:website.id})">{{website.id}}</a></td>
+                <td>{{website.name}}</td>
+                <td hide-xs>{{website.created | date:'medium'}}</td>
+                <td hide-xs hide-sm>{{website.user_id}}</td>
+                <td hide-xs hide-sm>{{website.template}}</td>
+                <td>{{website.domain}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

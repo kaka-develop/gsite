@@ -1,0 +1,33 @@
+version: '3'
+
+services: 
+    # visual: 
+    #     image: manomarks/visualizer
+    #     ports:
+    #         - 8000:8080
+    #     volumes:
+    #         - /var/run/docker.sock:/var/run/docker.sock
+    #     deploy:
+    #         placement:
+    #                 constraints: [node.role == manager] 
+    jenkins:
+        image: logimethods/jenkins
+        ports: 
+            - 18080:8080
+            - 50000:50000    
+        volumes:
+            - /root/jenkins_home:/var/jenkins_home
+            - /var/run/docker.sock:/var/run/docker.sock
+        deploy:
+            placement:
+                    constraints: [node.role == manager] 
+    portainer:
+        image: portainer/portainer
+        ports:
+            - 9000:9000
+        volumes:
+            - /data portainer/portainer
+            - /var/run/docker.sock:/var/run/docker.sock
+        deploy:
+            placement:
+                    constraints: [node.role == manager] 

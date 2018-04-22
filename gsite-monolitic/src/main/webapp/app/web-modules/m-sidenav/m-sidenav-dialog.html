@@ -1,0 +1,15 @@
+<md-card>
+    <md-card-content>
+        <form name="Form" layout-fill>
+            <md-input-container layout-fill>
+                <label data-translate="global.form.title">Title</label>
+                <input type="text" name="title" ng-minlength="2" ng-model="vm.sidenav.title" required/>
+            </md-input-container>
+
+            <div class="m-color-picker" label="{{'myWebsite.custom.textColor' | translate}}" icon="text_format" md-color-picker ng-model="vm.sidenav.textColor" md-color-history="true"></div>
+
+            <div class="m-color-picker" label="{{'myWebsite.custom.backgroundColor' | translate}}" md-color-picker ng-model="vm.sidenav.backgroundColor" md-color-history="true"></div>
+
+        </form>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,37 @@
+<md-card>
+    <md-card-content>
+        <form name="Form" layout="column"  ng-submit="vm.submit()">
+
+            <md-input-container  >
+                <div class="md-button md-primary" ng-disabled="vm.loading" ngf-select="vm.upload($file)" ngf-select ng-model="vm.photoFile" name="file" ngf-pattern="'image/*'"
+                     ngf-accept="'image/*'">
+                    <span data-translate="myWebsite.custom.uploadPhoto">Upload photo</span>
+                </div>
+            </md-input-container>
+            <md-input-container ng-show="vm.photoFile">
+                <label data-translate="global.form.name">Name</label>
+                <input ng-model="vm.item.name" type="text" ng-required="true">
+            </md-input-container>
+            <md-input-container ng-show="vm.photoFile">
+                <label data-translate="global.form.des">Description</label>
+                <input ng-model="vm.item.des" type="text" ng-required="true">
+            </md-input-container>
+            <md-input-container  layout="row">
+                <div>
+                    <button type="submit" aria-label="Add" ng-disabled="!Form.$valid || vm.loading"  class="md-button md-raised md-primary md-icon-button">
+                        <md-icon class="material-icons">add</md-icon>
+                    </button>
+                </div>
+                <div>
+                    <div layout="row" layout-align="left center" ng-repeat="item in vm.photo.items">
+                        <md-button aria-label="delete" class="md-icon-button" ng-disabled="vm.loading" ng-click="vm.deleteItem($index)">
+                            <md-icon class="material-icons"> clear</md-icon>
+                        </md-button>
+                        <span class="md-subhead m-1-line" flex>{{item.name}}</span>
+                    </div>
+                </div>
+            </md-input-container>
+
+        </form>
+    </md-card-content>
+</md-card>

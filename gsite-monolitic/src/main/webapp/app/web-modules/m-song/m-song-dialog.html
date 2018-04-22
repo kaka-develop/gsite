@@ -1,0 +1,32 @@
+<md-card>
+    <md-card-content>
+        <form name="Form" layout="column"  ng-submit="vm.submit(vm.item)">
+            <md-input-container  >
+                <div class="md-button md-primary" ng-disabled="vm.loading" ngf-select="vm.upload($file)" ngf-select ng-model="vm.songFile" name="file" ngf-pattern="'audio/*'"
+                     ngf-accept="'audio/*'">
+                    <span data-translate="myWebsite.custom.uploadSong">Upload song</span>
+                </div>
+            </md-input-container>
+            <md-input-container ng-show="vm.songFile" >
+                <label data-translate="global.form.title">Title</label>
+                <input ng-model="vm.item.title"  type="text" minlength="3" required>
+            </md-input-container>
+            <md-input-container  layout="row">
+                <div>
+                    <button type="submit" ng-disabled="!Form.$valid || vm.loading" aria-label="Add" class="md-button md-raised md-primary md-icon-button">
+                        <md-icon class="material-icons">add</md-icon>
+                    </button>
+                </div>
+                <div>
+                    <div layout="row" layout-align="left center" ng-repeat="item in vm.song.items">
+                        <md-button aria-label="delete" class="md-icon-button"  ng-disabled="vm.loading"  ng-click="vm.deleteItem($index)">
+                            <md-icon class="material-icons"> clear</md-icon>
+                        </md-button>
+                        <span class="md-subhead m-1-line" flex>{{item.title}}</span>
+                    </div>
+                </div>
+            </md-input-container>
+
+        </form>
+    </md-card-content>
+</md-card>

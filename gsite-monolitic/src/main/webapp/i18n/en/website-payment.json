@@ -1,0 +1,10 @@
+{
+    "webPayment" : {
+        "title": "Purchase website with:",
+        "cardType": "Card type",
+        "month": "Month",
+        "year": "Year",
+        "purchase": "Purchase",
+        "cardNumber": "Card number"
+    }
+}

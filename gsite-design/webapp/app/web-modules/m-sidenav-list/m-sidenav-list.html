@@ -1,0 +1,26 @@
+<md-list class="m-template-sidenav-list">
+    <md-list-item class="md-2-line" ui-sref="{{vm.homeState}}" ng-click="vm.toggleLeft()">
+        <i class="material-icons" flex="15">home</i>
+        <div class="md-list-item-text" layout="column" flex>
+            <h3>Home</h3>
+            <h4>Welcome to my website</h4>
+        </div>
+    </md-list-item>
+    <md-list-item class="md-2-line" ng-repeat="item in vm.list.choices" ui-sref="{{item.state}}" ng-click="vm.toggleLeft()">
+        <i class="material-icons" flex="15">{{item.icon}}</i>
+        <div class="md-list-item-text" layout="column" flex>
+            <h3>{{ item.title }}</h3>
+            <h4>{{ item.subTitle }}</h4>
+        </div>
+    </md-list-item>
+    <md-list-item class="md-2-line">
+        <div layout="row" layout-fill>
+            <md-icon class="material-icons" flex="15">language</md-icon>
+            <md-select ng-model="vm.lang" aria-label="Language">
+                <md-option value="en" ng-selected="true">English</md-option>
+                <md-option value="vi">Vietnamese</md-option>
+            </md-select>
+            <span flex></span>
+        </div>
+    </md-list-item>
+</md-list>

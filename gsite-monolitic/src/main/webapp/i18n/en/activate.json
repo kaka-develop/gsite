@@ -1,0 +1,17 @@
+{
+    "activate": {
+        "title": "Activation",
+        "messages": {
+            "success": {
+                "title": "Your user has been activated successfully.",
+                "subtitle": "Please sign in"
+            },
+            "error": {
+                "title": "Your user could not be activated!",
+                "subtitle": "Please sign up"
+            }
+        },
+        "signup": "Sign up",
+        "login": "Login"
+    }
+}

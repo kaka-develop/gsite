@@ -1,0 +1,69 @@
+<div>
+    <md-button ui-sref="{{vm.previousState}}" class="md-raised md-primary" data-translate="global.form.back">Back</md-button>
+</div>
+<div>
+
+    <div class="m-content">
+        <h2 data-translate="website.info">Website infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                <p>
+                    <span data-translate="global.form.id">ID</span> :
+                    <b>{{vm.website.id}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.name">Name</span> :
+                    <b>{{vm.website.name}}</b>
+                </p>
+                <p>
+                    <span data-translate="website.subdomain">Sub domain</span> :
+                    <b>{{vm.website.domain}}</b>
+                    <a ng-href="{{vm.getHost(vm.myWebsite.domain)}}" target="_blank">{{vm.getHost(vm.myWebsite.domain)}}</a>
+                </p>
+                <p >
+                    <span data-translate="website.customcomponent">Custom components</span> :
+                    <b ng-show="vm.website.custom.toolbar.isEnable">Toolbar </b>
+                    <b ng-show="vm.website.custom.homepage.isEnable">Homepage </b>
+                    <b ng-show="vm.website.custom.sidenav.isEnable">Sidenav </b>
+                    <b ng-show="vm.website.custom.footer.isEnable">Footer</b>
+                    <b ng-show="vm.website.custom.basicInfo.isEnable">BasicInfo </b>
+                    <b ng-show="vm.website.custom.song.isEnable">Song </b>
+                    <b ng-show="vm.website.custom.photo.isEnable">Photo</b>
+                </p>
+            </div>
+            <div flex>
+                <p>
+                    <span data-translate="website.template">Template</span> :
+                    <b>{{vm.website.template}}</b>
+                </p>
+
+                <p>
+                    <span data-translate="website.user">User</span> :
+                    <b>{{vm.website.user_id}}</b>
+                </p>
+
+                <p>
+                    <span data-translate="global.form.created">Created date</span> :
+                    <b>{{vm.website.created | date:'HH:mm dd-MM-yyyy'}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.des">Description</span> :
+                    <b>{{vm.website.des}}</b>
+                </p>
+            </div>
+        </div>
+        <div layout="row">
+            <span data-translate="website.sharedUsers">Shared users</span> :
+            <div layout="column">
+                <b ng-repeat="item in vm.website.sharedUsers">&nbsp; {{item}}</b>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="website.edit({id: vm.website.id})" class="md-raised md-primary" data-translate="global.form.edit">Edit</md-button>
+    <md-button ui-sref="website.delete({id: vm.website.id})" class="md-raised md-warn" data-translate="global.form.delete">Delete</md-button>
+</div>

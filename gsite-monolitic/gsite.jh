@@ -1,0 +1,36 @@
+// JDL definition for application 'gsite' generated with command 'yo jhipster:export-jdl'
+
+entity Feedback (feedback) {
+  title String required,
+  content String required minlength(6),
+  created ZonedDateTime required,
+  user_id String required minlength(3)
+}
+entity Question (question) {
+  content String required minlength(6),
+  answer String,
+  created ZonedDateTime required,
+  user_id String
+}
+entity Website (website) {
+  name String required minlength(3),
+  created ZonedDateTime required,
+  user_id String required,
+  template_id String required,
+  domain String required minlength(3)
+}
+entity WebTemplate (web_template) {
+  name String required minlength(3),
+  source String required minlength(3),
+  rating Integer required min(3),
+  category String required minlength(3)
+}
+
+
+
+paginate Feedback with infinite-scroll
+service Feedback with serviceClass
+paginate Question with infinite-scroll
+service Question with serviceClass
+paginate WebTemplate with infinite-scroll
+service WebTemplate with serviceClass

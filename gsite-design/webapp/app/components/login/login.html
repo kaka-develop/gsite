@@ -1,0 +1,45 @@
+<!--Anonymous-->
+<md-card>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>Login</span>
+        </div>
+    </md-toolbar>
+    <md-card-content>
+        <form name="Form" layout-fill>
+            <md-input-container layout-fill>
+                <label>Username</label>
+                <input type="text" name="username" ng-model="vm.user.username" minlength="2" required/>
+            </md-input-container>
+            <md-input-container layout-fill>
+                <label>Password</label>
+                <input type="password" name="password" ng-model="vm.user.password" required="" minlength="2" />
+            </md-input-container>
+            <div layout="row" layout-fill>
+                <md-button ng-disabled="!Form.$valid" ng-click="vm.submit() || vm.closeLoginDialog()" class="md-raised md-primary">Login</md-button>
+                <span flex></span>
+                <md-button ui-sref="register" ng-click="vm.closeLoginDialog()" class="md-raised md-primary right">Register</md-button>
+            </div>
+            <div layout="row" layout-fill layout-align="center center">
+                <button type="button" class="m-google" md-ink-ripple></button>
+                <button type="button" class="m-facebook" md-ink-ripple></button>
+                <button type="button" class="m-twitter" md-ink-ripple></button>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>
+
+<!--User-->
+
+<!--<md-card>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>John Terry</span>
+        </div>
+    </md-toolbar>
+    <md-card-content>
+        <div layout="row" layout-fill layout-align="center">
+            <md-button ng-click="vm.logout()" class="md-raised md-warn right">Log out</md-button>
+        </div>
+    </md-card-content>
+</md-card>-->

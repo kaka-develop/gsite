@@ -1,0 +1,17 @@
+<div class="m-feedbacks" layout-padding layout-gt-sm="row" layout-align="center center">
+    <md-list class="md-dense m-common-panel" md-whiteframe="1">
+        <md-list-item class="md-3-line" ng-repeat="item in vm.faqs">
+            <div class="md-list-item-text">
+                <p>
+                    <md-icon class="material-icons">help</md-icon>
+                    <span class="md-subhead">{{item.content}}</span>
+                </p>
+                <p>
+                    <md-icon class="material-icons">question_answer</md-icon>
+                    <span class="md-title">{{item.answer}}</span>
+                </p>
+            </div>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+</div>

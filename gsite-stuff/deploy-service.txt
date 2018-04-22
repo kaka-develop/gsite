@@ -1,0 +1,17 @@
+cd gsite-customer && ./gradlew clean bootRepackage -Pprod buildDocker && cd ..
+cd gsite-manager && ./gradlew clean bootRepackage -Pprod buildDocker && cd ..
+cd gsite-web && ./gradlew clean bootRepackage -Pprod buildDocker && cd ..
+
+docker push ainguyen/gsite-micro-customer && docker push ainguyen/gsite-micro-manager
+
+docker network create --driver overlay gsite
+
+docker service create --name gsite-mongodb --network gsite -p 27017:27017 mongo:3.2.10
+
+docker service create --name gsite-customer --network gsite --env-file cus-en.yml -p 8081:8081 ainguyen/gsite-micro-customer
+
+docker service create --name gsite-manager --network gsite --env-file man-en.yml -p 8082:8082 ainguyen/gsite-micro-manager
+
+docker service create --name gsite-web --network gsite --env-file web-en.yml -p 8080:8080 ainguyen/gsite-micro-web
+
+docker service create --name gsite-jenkins --network gsite -p 18080:8080 -p 50000:50000 jenkinsci/jenkins

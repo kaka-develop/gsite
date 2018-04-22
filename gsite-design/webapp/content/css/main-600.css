@@ -1,0 +1,41 @@
+@media only screen and (min-width: 600px) {
+  .m-home .m-home-panel {
+    width: 100%;
+    height: 380px;
+    padding: 50px;
+    background-image: url("/content/images/bg/bg-home-panel.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; }
+    .m-home .m-home-panel p {
+      color: white;
+      font-size: 20px; }
+  .m-home div .m-home-panel-title {
+    font-size: 60px; }
+  .m-template-home .m-template-home-photo .m-common-content-item {
+    width: 80%; }
+  .m-register form {
+    width: 70%; }
+  .m-templates .m-templates-card {
+    width: 60%; }
+  .m-websites .m-websites-card {
+    width: 60%; }
+  .m-settings .m-settings-panel {
+    width: 70%; }
+  .m-template-photo .m-common-content-item img {
+    width: 60%; }
+  .m-webpayment form {
+    width: 70%; }
+  .m-webcustom form {
+    width: 70%; }
+  .m-beautiful-template-style .m-template-home-avatar {
+    height: 330px; }
+  .m-beautiful-template-style .m-hide-photo-form .m-photo-normal-form, .m-beautiful-template-style .m-template-home-photo .m-photo-normal-form, .m-beautiful-template-style .m-template-photo .m-photo-normal-form {
+    display: none; }
+  .m-beautiful-template-style .m-hide-photo-form .m-photo-beautiful-form, .m-beautiful-template-style .m-template-home-photo .m-photo-beautiful-form, .m-beautiful-template-style .m-template-photo .m-photo-beautiful-form {
+    display: block; }
+    .m-beautiful-template-style .m-hide-photo-form .m-photo-beautiful-form p, .m-beautiful-template-style .m-template-home-photo .m-photo-beautiful-form p, .m-beautiful-template-style .m-template-photo .m-photo-beautiful-form p {
+      margin-left: 15px; }
+  .m-beautiful-template-style .m-template-photo img {
+    height: 200px; }
+  .m-template-photo-dialog img {
+    height: 280px; } }

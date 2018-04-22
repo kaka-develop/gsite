@@ -1,0 +1,28 @@
+<div layout-padding>
+    <div layout-padding class="md-whiteframe-1dp">
+        <form name="Form" layout="column">
+            <md-input-container>
+                <label data-translate="question.content">Content</label>
+                <input type="text" name="content" ng-minlength="3" ng-model="vm.question.content" required/>
+            </md-input-container>
+            <md-input-container>
+                <label data-translate="question.answer">Answer</label>
+                <input type="text" name="des" ng-minlength="3" ng-model="vm.question.answer" required/>
+            </md-input-container>
+            <md-input-container layout-fill>
+                <label data-translate="question.user">User</label>
+                <md-select ng-model="vm.question.user_id" required>
+                    <md-option ng-repeat="item in vm.users" value="{{item.id}}">{{item.id}}</md-option>
+                </md-select>
+            </md-input-container>
+        </form>
+
+        <div layout="row">
+            <md-button ng-click="vm.save()" ng-disabled="!Form.$valid" class="md-raised md-primary" data-translate="global.form.save">Save</md-button>
+            <span flex></span>
+            <md-button ng-click="vm.closeDialog()" class="md-raised right" data-translate="global.form.cancel">Cancel</md-button>
+        </div>
+
+        </form>
+    </div>
+</div>

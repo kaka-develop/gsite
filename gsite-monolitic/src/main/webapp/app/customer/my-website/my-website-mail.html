@@ -1,0 +1,39 @@
+<div class="m-common-toolbar">
+</div>
+
+<form name="Form" layout-padding ng-submit="vm.sendEmail(vm.user.email)">
+    <md-content class="md-no-momentum" md-whiteframe="1">
+        <h2>Share management with:</h2>
+        <div class="m-questions" layout-padding layout-gt-sm="row" layout-align="start center">
+            <div layout-padding>
+                <md-input-container layout-fill>
+                    <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">email</md-icon>
+                    <label>Email</label>
+                    <input ng-model="vm.user.email" type="email" name="email" ng-required="true">
+                    <div ng-messages="Form.email.$error">
+                        <div ng-message="required">This is required and must be valid email</div>
+                    </div>
+                </md-input-container>
+
+                <div layout="row">
+                    <button type="submit" ng-disabled="!Form.$valid"
+                            class="md-button md-raised md-primary">
+                        Send
+                    </button>
+                    <md-button ui-sref="my-website" class="md-raised">Back</md-button>
+                </div>
+            </div>
+
+        </div>
+        <md-divider></md-divider>
+        <div layout="column" layout-padding>
+            <div layout="row" layout-align="left center" ng-repeat="item in vm.website.sharedUsers">
+                <md-button aria-label="delete" class="md-icon-button" ng-click="vm.deleteEmail($index)">
+                    <md-icon class="material-icons"> clear</md-icon>
+                </md-button>
+                <span class="md-subhead" flex>{{item}}</span>
+            </div>
+        </div>
+    </md-content>
+</form>
+

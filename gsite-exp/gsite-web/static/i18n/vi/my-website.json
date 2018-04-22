@@ -1,0 +1,22 @@
+{
+    "myWebsite" : {
+        "name": "Tên trang web",
+        "created": "Ngày tạo",
+        "template": "Trang mẫu",
+        "subdomain": "Tên miền",
+        "custom": {
+            "basicDetail": "Chi tiết",
+            "customization": "Tuỳ chỉnh",
+            "basicInfo": "Thông tin",
+            "song": "Bài hát",
+            "photo": "Ảnh",
+            "homepage": "Trang chính",
+            "toolbar": "Thanh menu",
+            "sidenav": "Thanh bên",
+            "uploadSong": "Đăng bài hát",
+            "uploadPhoto": "Đăng ảnh",
+            "textColor": "Màu chữ",
+            "backgroundColor": "Màu nền"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<h3 data-translate="audits.title"> Audits</h3>
+<p data-translate="audits.filter.title">Filter by date</p>
+<div layout-gt-xs="row">
+    <md-input-container>
+        <label>From</label>
+        <md-datepicker type="date" name="start" ng-model="vm.fromDate" ng-change="vm.onChangeDate()" required></md-datepicker>
+    </md-input-container>
+    <md-input-container>
+        <label>To</label>
+        <md-datepicker type="date" name="end" ng-model="vm.toDate " ng-change="vm.onChangeDate() " required></md-datepicker>
+    </md-input-container>
+</div>
+
+<div layout-fill layout="column">
+    <md-content>
+        <table layout-fill>
+            <thead>
+                <tr>
+                    <th ng-click="predicate='timestamp' ; reverse=!reverse "><span data-translate="audits.table.header.date ">Date</span></th>
+                    <th ng-click="predicate='principal' ; reverse=!reverse "><span data-translate="audits.table.header.principal ">User</span></th>
+                    <th ng-click="predicate='type' ; reverse=!reverse "><span data-translate="audits.table.header.status ">State</span></th>
+                    <th ng-click="predicate='data.message' ; reverse=!reverse "><span data-translate="audits.table.header.data ">Extra data</span></th>
+                </tr>
+            </thead>
+
+            <tr ng-repeat="audit in vm.audits | filter:filter | orderBy:predicate:reverse " ng-hide="audit.filtered ">
+                <td><span>{{audit.timestamp| date:'medium'}}</span></td>
+                <td><small>{{audit.principal}}</small></td>
+                <td>{{audit.type}}</td>
+                <td>
+                    <span ng-show="audit.data.message ">{{audit.data.message}}</span>
+                    <span ng-show="audit.data.remoteAddress "><span data-translate="audits.table.data.remoteAddress ">Remote Address</span>                    {{audit.data.remoteAddress}}</span>
+                </td>
+            </tr>
+        </table>
+    </md-content>
+</div>

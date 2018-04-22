@@ -1,0 +1,56 @@
+<div>
+    <md-button ui-sref="website" class="md-raised md-primary">Back</md-button>
+</div>
+<div>
+
+    <div class="m-content">
+        <h2>Web template infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                <p>
+                    <span>ID: </span>
+                    <b>{{vm.website.id}}</b>
+                </p>
+                <p>
+                    <span>Name: </span>
+                    <b>{{vm.website.name}}</b>
+                </p>
+                <p>
+                    <span>Domain: </span>
+                    <b>{{vm.website.domain}}</b>
+                </p>
+
+            </div>
+            <div flex>
+                <p>
+                    <span>Template: </span>
+                    <b>{{vm.website.template}}</b>
+                </p>
+
+                <p>
+                    <span>User: </span>
+                    <b>{{vm.website.user_id}}</b>
+                </p>
+
+                <p>
+                    <span>Created date: </span>
+                    <b>{{vm.website.created}}</b>
+                </p>
+
+            </div>
+        </div>
+        <div layout="row">
+            <span>Shared users:</span>
+            <div layout="column">
+                <b ng-repeat="item in vm.website.sharedUsers">&nbsp; {{item}}</b>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="website.edit({id: vm.website.id})" class="md-raised md-primary">Edit</md-button>
+    <md-button ui-sref="website.delete({id: vm.website.id})" class="md-raised md-warn">Delete</md-button>
+</div>

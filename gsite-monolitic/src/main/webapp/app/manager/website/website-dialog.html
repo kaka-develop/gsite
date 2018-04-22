@@ -1,0 +1,48 @@
+<div layout-padding>
+    <div layout-padding class="md-whiteframe-1dp">
+        <span class="error-text" ng-show="vm.isDomainError" data-translate="website.error.domain">Sub domain is already existed!</span>
+        <form name="Form" layout="column" ng-submit="vm.save()">
+            <md-input-container>
+                <label data-translate="global.form.name">Name</label>
+                <input type="text" name="name" ng-minlength="2" ng-model="vm.website.name" required/>
+            </md-input-container>
+            <md-input-container>
+                <label data-translate="website.subdomain">Sub domain</label>
+                <input name="subdomain" ng-model="vm.website.domain" type="text" minlength="3" ng-pattern="/^[a-zA-Z]*$/" required>
+            </md-input-container>
+            <md-input-container>
+                <label  data-translate="global.form.des">Description</label>
+                <input type="text" name="des" ng-minlength="2" ng-model="vm.website.des" required/>
+            </md-input-container>
+            <div layout="row">
+                <md-input-container>
+                    <label  data-translate="website.template">Template</label>
+                    <md-select ng-model="vm.website.template" required>
+                        <md-option ng-repeat="item in vm.templates" value="{{item.source}}">{{item.name}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container>
+                    <label  data-translate="website.user">User</label>
+                    <md-select ng-model="vm.website.user_id" required>
+                        <md-option ng-repeat="item in vm.users" value="{{item.login}}">{{item.login}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+            <div layout="row" layout-align="left center" ng-repeat="item in vm.sharedUsers">
+                <md-button aria-label="delete" class="md-icon-button" ng-click="vm.deleteUser($index)">
+                    <md-icon class="material-icons"> clear</md-icon>
+                </md-button>
+                <span class="md-subhead m-1-line" flex>{{item}}</span>
+            </div>
+
+            <div layout="row">
+                <button type="submit" ng-disabled="!Form.$valid" class="md-button md-raised md-primary" data-translate="global.form.save">Save</button>
+                <span flex></span>
+                <md-button ng-click="vm.closeDialog()" class="md-raised right"  data-translate="global.form.cancel">Cancel</md-button>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<md-card>
+    <md-card-content>
+        <form name="Form" layout="column">
+            <md-input-container >
+                <label data-translate="global.form.title">Title</label>
+                <input type="text" name="title" ng-minlength="2" ng-model="vm.toolbar.title" required/>
+            </md-input-container>
+
+            <div md-color-picker label="{{'myWebsite.custom.textColor' | translate}}" icon="text_format" ng-model="vm.toolbar.textColor" md-color-history="true"></div>
+        </form>
+    </md-card-content>
+</md-card>

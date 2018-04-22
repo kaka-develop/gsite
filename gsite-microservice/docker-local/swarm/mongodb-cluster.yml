@@ -1,0 +1,65 @@
+version: '3'
+services:
+    gsite-mongodb-config:
+        image: mongo:3.2.10
+        command: mongod --noprealloc --configsvr --dbpath /data/db
+        networks: 
+            gsite-db:
+                aliases:
+                    - mongoconfig
+        deploy:
+            restart_policy:
+                condition: on-failure            
+    gsite-mongodb-mongos:
+        image: mongo:3.2.10
+        ports:
+            - 27017:27017
+        command: mongos --configdb mongoconfig
+        networks:
+            gsite-app:
+               aliases:
+                    - mongos  
+            gsite-db:
+                aliases:
+                    - mongos
+        depends_on:
+            - gsite-mongodb-config
+        deploy:
+            restart_policy:
+                condition: on-failure    
+    gsite-mongodb-shard1-rs1:
+        image: ainguyen/gsite-mongodb-shard
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+        networks: 
+            gsite-db:
+                aliases:
+                    - mongoshard1
+        deploy:
+            restart_policy:
+                condition: on-failure
+    gsite-mongodb-shard1-rs2:
+        image: ainguyen/gsite-mongodb-shard
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+        networks: 
+            gsite-db:
+                aliases:
+                    - mongoshard1
+        deploy:
+            restart_policy:
+                condition: on-failure
+    gsite-mongodb-shard1-rs3:
+        image: ainguyen/gsite-mongodb-shard
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+        networks: 
+            gsite-db:
+                aliases:
+                    - mongoshard1
+        deploy:
+            restart_policy:
+                condition: on-failure
+
+networks:
+    gsite-app:
+       external: true
+    gsite-db:
+        driver: overlay

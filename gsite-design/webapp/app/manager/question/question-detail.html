@@ -1,0 +1,46 @@
+<div>
+    <md-button ui-sref="question" class="md-raised md-primary">Back</md-button>
+</div>
+<div>
+
+    <div class="m-content">
+        <h2>Question infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                <p>
+                    <span>ID: </span>
+                    <b>{{vm.question.id}}</b>
+                </p>
+                <p>
+                    <span>Title: </span>
+                    <b>{{vm.question.title}}</b>
+                </p>
+                <p>
+                    <span>Answer: </span>
+                    <b>{{vm.question.answer}}</b>
+                </p>
+
+            </div>
+            <div flex>
+                <p>
+                    <span>User: </span>
+                    <b>{{vm.question.user_id}}</b>
+                </p>
+
+                <p>
+                    <span>Created date: </span>
+                    <b>{{vm.question.created}}</b>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="question.edit({id: vm.question.id})" class="md-raised md-primary">Edit</md-button>
+    <md-button ui-sref="question.delete({id: vm.question.id})" class="md-raised md-warn">Delete</md-button>
+</div>

@@ -1,0 +1,57 @@
+<div class="m-common-toolbar">
+</div>
+
+<div class="m-common-panel md-whiteframe-1dp" layout="column" layout-align="center center">
+
+    <h1 data-translate="reset.finish.title">Reset password</h1>
+
+    <div ng-show="vm.keyMissing">
+        <p data-translate="reset.finish.messages.keymissing" class="error-text">The password reset key is missing.</p>
+    </div>
+
+    <p data-translate="reset.finish.messages.info" ng-hide="vm.success || vm.keyMissing">Choose a new password</p>
+
+    <p ng-show="vm.error" class="error-text" data-translate="reset.finish.messages.error.title">Your password couldn't
+        be reset.</p>
+
+    <p ng-show="vm.success" data-translate="reset.finish.messages.success" translate-compile>Your password has been
+        reset. Please sign
+        in</p>
+    <div ng-show="vm.success" layout="row" layout-align="center center">
+        <md-button class="md-raised md-primary" aria-label="login"> Login</md-button>
+    </div>
+
+    <form name="Form" ng-hide="vm.keyMissing" ng-show="!vm.success" ng-submit="vm.finishReset($event)">
+        <md-input-container>
+            <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">lock</md-icon>
+            <label data-translate="global.form.password">Password</label>
+            <input id="password" type="password" name="password" ng-model="vm.resetAccount.password" md-autofocus required=""
+                   minlength="8"/>
+            <div ng-messages="Form.password.$error">
+                <div ng-message-exp="['required', 'minlength']" data-translate="global.form.error.password">
+                    More than 8 characters
+                </div>
+            </div>
+        </md-input-container>
+        <md-input-container>
+            <md-icon style="color:black" aria-label="keyboard_arrow_down" class="material-icons">verified_user
+            </md-icon>
+            <label data-translate="global.form.confirmpassword">Confirm password</label>
+            <input type="password" name="confirmpassword" ng-model="vm.confirmpassword" required=""
+                   match-password="password"
+            />
+            <div ng-messages="Form.confirmpassword.$error">
+                <div ng-message-exp="['required','passwordMatch']"
+                     data-translate="global.form.error.confirmpassword">Match with the
+                    password
+                </div>
+            </div>
+        </md-input-container>
+        <div layout="row" layout-align="center center">
+            <button type="submit" ng-disabled="!Form.$valid" class="md-button md-raised md-primary">Reset
+            </button>
+            <md-button ui-sref="home" class="md-raised">Cancel</md-button>
+        </div>
+    </form>
+
+</div>

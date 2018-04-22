@@ -1,0 +1,24 @@
+{
+    "website": {
+        "title": "Websites",
+        "user": "User",
+        "template": "Template",
+        "subdomain": "Sub domain",
+        "error": {
+            "subdomain": "Sub domain is already existed!"
+        },
+        "custom": {
+            "basicInfo": "Basic info",
+            "song": "Songs",
+            "photo": "Photos",
+            "homepage": "Homepage",
+            "toolbar": "Toolbar",
+            "sidenav": "Sidenav",
+            "uploadSong": "Upload song",
+            "uploadPhoto": "Upload photo"
+        },
+        "customcomponent": "Custom components",
+        "sharedUsers": "Shared users",
+        "info": "Website information"
+    }
+}

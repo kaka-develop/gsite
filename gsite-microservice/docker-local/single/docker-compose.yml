@@ -1,0 +1,39 @@
+version: '3'
+services:
+    gsite-mongodb:
+        image: mongo:3.2.10
+        ports:
+            - 27017:27017
+    gsite-cache-member:
+        image: ainguyen/gsite-cache-member
+    gsite-manager:
+        image: ainguyen/gsite-micro-manager
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://gsite-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=gsite  
+        depends_on:
+            - gsite-mongodb
+            - gsite-cache-member
+    gsite-customer:
+        image: ainguyen/gsite-micro-customer
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://gsite-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=gsite  
+        depends_on:
+            - gsite-mongodb
+            - gsite-cache-member
+    gsite-web:
+        image: ainguyen/gsite-micro-web
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://gsite-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=gsite
+            - GSITEMANAGER_RIBBON_LISTOFSERVERS=gsite-manager:8082
+            - GSITECUSTOMER_RIBBON_LISTOFSERVERS=gsite-customer:8081
+        ports:
+            - 443:8080
+        depends_on:
+            - gsite-manager
+            - gsite-customer

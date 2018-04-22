@@ -1,0 +1,22 @@
+<div layout-padding>
+    <div layout-padding class="md-whiteframe-1dp">
+        <form name="Form" layout="column">
+            <md-input-container>
+                <label data-translate="global.form.title">Title</label>
+                <input type="text" name="title" ng-minlength="2" ng-model="vm.notification.title" required/>
+            </md-input-container>
+            <md-input-container>
+                <label data-translate="notification.content">Content</label>
+                <input type="text" name="content" ng-minlength="2" ng-model="vm.notification.content" required/>
+            </md-input-container>
+        </form>
+
+        <div layout="row">
+            <md-button ng-click="vm.save()" ng-disabled="!Form.$valid" class="md-raised md-primary" data-translate="global.form.save">Save</md-button>
+            <span flex></span>
+            <md-button ng-click="vm.closeDialog()" class="md-raised right" data-translate="global.form.cancel">Cancel</md-button>
+        </div>
+
+        </form>
+    </div>
+</div>

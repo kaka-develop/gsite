@@ -1,0 +1,45 @@
+<h2 data-translate="webTemplate.title">Web Templates</h2>
+<div>
+    <table layout-fill>
+        <thead>
+        <tr>
+            <th>
+                <md-button ui-sref="web-template.new" class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">add</i>
+                </md-button>
+            </th>
+            <th><span data-translate="webTemplate.name">Name</span></th>
+            <th hide-xs hide-sm><span data-translate="webTemplate.rating">Rating</span></th>
+            <th hide-xs><span data-translate="webTemplate.category">Category</span></th>
+            <th><span data-translate="webTemplate.source">Source</span></th>
+            <th hide-xs hide-sm data-translate="webTemplate.date">Date</th>
+        </tr>
+        </thead>
+        <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+        <tr ng-repeat="webTemplate in vm.webTemplates track by webTemplate.id">
+            <td>
+                <div class="m-item-actions" layout="row" layout-align="start center">
+                    <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-warn"
+                               ui-sref="web-template.delete({id: webTemplate.id})">
+                        <i class="material-icons">delete</i>
+                    </md-button>
+                    <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-primary"
+                               ui-sref="web-template.edit({id: webTemplate.id})">
+                        <i class="material-icons">edit</i>
+                    </md-button>
+                    <md-button class="md-icon-button md-raised md-primary"
+                               ui-sref="web-template.detail({id:webTemplate.id})">
+                        <i class="material-icons">remove_red_eye</i>
+                    </md-button>
+                </div>
+            </td>
+            <td>{{webTemplate.name}}</td>
+            <td hide-xs hide-sm>{{webTemplate.rating}}</td>
+            <td hide-xs>{{webTemplate.category}}</td>
+            <td><a ui-sref="{{webTemplate.source}}">{{webTemplate.source}}</a></td>
+            <td hide-xs hide-sm>{{webTemplate.created | date:'medium'}}</td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>

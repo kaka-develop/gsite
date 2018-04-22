@@ -1,0 +1,77 @@
+<div>
+    <md-button ui-sref="user-management" class="md-raised md-primary" data-translate="global.form.back">Back</md-button>
+</div>
+<div >
+    <div class="m-content">
+        <h2 data-translate="usermanage.info">User infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                 <p>
+                    <span data-translate="global.form.id">ID</span> :
+                     <b>{{vm.user.id}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.login">Login</span> :
+                    <b>{{vm.user.login}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.firstName">First name</span> :
+                    <b>{{vm.user.firstName}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.lastName">Last name</span> :
+                    <b>{{vm.user.lastName}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.email">Email address</span> :
+                    <b>{{vm.user.email}}</b>
+                </p>
+
+            </div>
+            <div flex>
+
+                <p>
+                    <span data-translate="usermanage.createdBy">Created by</span> :
+                    <b>{{vm.user.createdBy}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.created">Created date</span> :
+                    <b>{{vm.user.createdDate| date: 'medium'}}</b>
+                </p>
+                <p>
+                    <span data-translate="usermanage.modifiedBy">Modified by</span> :
+                    <b>{{vm.user.lastModifiedBy}}</b>
+                </p>
+                <p>
+                    <span data-translate="usermanage.modified">Modified date</span> :
+                    <b>{{vm.user.lastModifiedDate | date:'medium'}}</b>
+                </p>
+               <div layout="row" layout-align="start center">
+                   <md-input-container>
+                       <label data-translate="global.form.language">Language</label>
+                       <md-select ng-model="vm.user.langKey" aria-label="Language">
+                           <md-option value="en" ng-click="vm.setLanguage(vm.user,'en')" data-translate="global.menu.language.eng">English</md-option>
+                           <md-option value="vi"  ng-click="vm.setLanguage(vm.user,'vi')" data-translate="global.menu.language.vie">Vietnamese</md-option>
+                       </md-select>
+                   </md-input-container>
+                   <md-switch class="md-primary" ng-model="vm.user.activated" aria-label="Activated" ng-change="vm.setActivated(vm.user,vm.user.activated)" >
+                   <span data-translate="usermanage.activated">Activated</span>
+                   </md-switch>
+               </div>
+            </div>
+        </div>
+        <div layout="row">
+            <span data-translate="usermanage.authority">Authorities</span> :
+            <div layout="column">
+                <b ng-repeat="authority in vm.user.authorities">&nbsp; {{authority}}</b>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="user-management.edit({login: vm.user.login})" class="md-raised md-primary" data-translate="global.form.edit">Edit</md-button>
+    <md-button ui-sref="user-management.delete({login: vm.user.login})" class="md-raised md-warn" data-translate="global.form.delete">Delete</md-button>
+</div>

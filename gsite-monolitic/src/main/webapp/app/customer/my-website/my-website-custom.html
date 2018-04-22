@@ -1,0 +1,101 @@
+<div class="m-common-toolbar">
+</div>
+<div class="m-webcustom" layout-gt-xs="row" layout-align="center center">
+    <form name="Form" layout-padding class="white-bg" md-whiteframe="1" ng-submit="vm.save()">
+        <md-content class="md-no-momentum white-bg" layout-gt-sm="row">
+            <div layout="column" layout-padding flex>
+                <h2 data-translate="myWebsite.custom.basicDetail">Basic details</h2>
+                <md-input-container class="md-icon-float md-block">
+                    <md-icon aria-label="keyboard_arrow_down" class="material-icons">title</md-icon>
+                    <label  data-translate="myWebsite.name">Name</label>
+                    <input name="title" ng-model="vm.myWebsite.name" type="text" minlength="3" ng-required="true">
+                    <div ng-messages="Form.title.$error">
+                        <div ng-message-exp="['required','minlength']" data-translate="global.form.error.title">
+                            More than 3 characters
+                        </div>
+                    </div>
+                </md-input-container>
+                 <md-input-container class="md-icon-float md-block">
+                    <md-icon aria-label="keyboard_arrow_down" class="material-icons">description</md-icon>
+                     <label  data-translate="global.form.des"></label>
+                    <input name="des" ng-model="vm.myWebsite.des" type="text" minlength="6" >
+                     <div ng-messages="Form.des.$error">
+                         <div ng-message-exp="['minlength']" data-translate="global.form.error.des">
+                             More than 6 characters
+                         </div>
+                     </div>
+                 </md-input-container>
+                <md-input-container class="md-icon-float md-block">
+                    <md-icon aria-label="keyboard_arrow_down" class="material-icons">link</md-icon>
+                    <label data-translate="myWebsite.subdomain">Domain</label>
+                    <input type="text" name="domain" readonly ng-model="vm.myWebsite.domain"/>
+                    <a ng-href="{{vm.getHost(vm.myWebsite.domain)}}" target="_blank">{{vm.getHost(vm.myWebsite.domain)}}</a>
+                </md-input-container>
+            </div>
+            <div flex class="mc-custom">
+                <h2 data-translate="myWebsite.custom.customization">Customization</h2>
+                <div layout="row">
+                    <div flex>
+
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.myWebsite.custom.basicInfo.isEnable" ng-checked="true"  readonly aria-label="Basic Info">
+                                <span data-translate="myWebsite.custom.basicInfo">Basic info</span>
+                            </md-switch>
+                            <md-button ng-show="vm.myWebsite.custom.basicInfo.isEnable" ng-click="vm.customizeBasicInfo()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.myWebsite.custom.song.isEnable" aria-label="Songs">
+                                <span data-translate="myWebsite.custom.song">Songs</span>
+                            </md-switch>
+                            <md-button ng-show="vm.myWebsite.custom.song.isEnable" ng-click="vm.customizeSong()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.myWebsite.custom.photo.isEnable" aria-label="Photos">
+                                <span data-translate="myWebsite.custom.photo">Photos</span>
+                            </md-switch>
+                            <md-button ng-show="vm.myWebsite.custom.photo.isEnable" ng-click="vm.customizePhoto()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                    <div flex>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" readonly ng-model="vm.myWebsite.custom.homepage.isEnable" ng-checked="true" aria-label="Toolbar">
+                                <span data-translate="myWebsite.custom.homepage">Homepage</span>
+                            </md-switch>
+                            <md-button ng-show="vm.myWebsite.custom.homepage.isEnable"  ng-click="vm.customizeHomepage()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.myWebsite.custom.toolbar.isEnable" ng-checked="true"  readonly aria-label="Toolbar">
+                                <span data-translate="myWebsite.custom.toolbar">Toolbar</span>
+                            </md-switch>
+                            <md-button ng-show="vm.myWebsite.custom.toolbar.isEnable" ng-click="vm.customizeToolbar()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.myWebsite.custom.sidenav.isEnable" aria-label="Toolbar" ng-checked="true" readonly>
+                                <span data-translate="myWebsite.custom.sidenav">Sidenav</span>
+                            </md-switch>
+                            <md-button ng-show="vm.myWebsite.custom.sidenav.isEnable" ng-click="vm.customizeSidenav()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </md-content>
+        <div layout="row">
+            <button ng-disabled="!Form.$valid" type="submit" class="md-button md-raised md-primary" data-translate="global.form.save">Save</button>
+            <md-button ui-sref="my-website" class="md-raised" data-translate="global.form.cancel">Cancel</md-button>
+        </div>
+    </form>
+</div>

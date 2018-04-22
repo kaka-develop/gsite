@@ -1,0 +1,15 @@
+<md-content class="white-bg">
+    <md-nav-bar md-selected-nav-item="vm.currentState" nav-bar-aria-label="navigation links">
+        <md-nav-item ui-sref="faq" md-nav-click="goto(faq)" name="faq">
+            <span data-translate="global.menubar.faq">FAQ</span>
+        </md-nav-item>
+        <md-nav-item ui-sref="my-question" md-nav-click="goto(my-question)" name="my-question"
+                     ng-show="vm.isAuthenticated()">
+            <span data-translate="global.menubar.question">Question</span>
+        </md-nav-item>
+        <md-nav-item ui-sref="my-feedback" md-nav-click="goto(my-feedback)" name="my-feedback"
+                     ng-show="vm.isAuthenticated()">
+            <span data-translate="global.menubar.feedback">Feedback</span>
+        </md-nav-item>
+    </md-nav-bar>
+</md-content>

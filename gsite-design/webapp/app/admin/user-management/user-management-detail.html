@@ -1,0 +1,73 @@
+<div>
+    <md-button ui-sref="user-management" class="md-raised md-primary">Back</md-button>
+</div>
+<div >
+
+    <div class="m-content">
+        <h2>User infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                 <p>
+                    <span>ID: </span>
+                    <b>{{vm.user.id}}</b>
+                </p>
+                <p>
+                    <span>Login: </span>
+                    <b>{{vm.user.login}}</b>
+                </p>
+                <p>
+                    <span>First name: </span>
+                    <b>{{vm.user.firstName}}</b>
+                </p>
+                <p>
+                    <span>Last name: </span>
+                    <b>{{vm.user.lastName}}</b>
+                </p>
+                <p>
+                    <span>Email address: </span>
+                    <b>{{vm.user.email}}</b>
+                </p>
+                <p>
+                    <span>Activated: </span>
+                    <b>{{vm.user.activated}}</b>
+                </p>
+            </div>
+            <div flex>
+                <p>
+                    <span>Language: </span>
+                    <b>{{vm.user.lang}}</b>
+                </p>
+                <p>
+                    <span>Created by: </span>
+                    <b>{{vm.user.createdBy}}</b>
+                </p>
+                <p>
+                    <span>Created date: </span>
+                    <b>{{vm.user.createdDate}}</b>
+                </p>
+                <p>
+                    <span>Modified by: </span>
+                    <b>{{vm.user.modifiedBy}}</b>
+                </p>
+                <p>
+                    <span>Modified date: </span>
+                    <b>{{vm.user.modifiedDate}}</b>
+                </p>
+
+            </div>
+        </div>
+        <div layout="row">
+            <span>Profiles:</span>
+            <div layout="column">
+                <b ng-repeat="authority in vm.user.authorities">&nbsp; {{authority}}</b>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="user-management.edit({id: vm.user.id})" class="md-raised md-primary">Edit</md-button>
+    <md-button ui-sref="user-management.delete({id: vm.user.id})" class="md-raised md-warn">Delete</md-button>
+</div>

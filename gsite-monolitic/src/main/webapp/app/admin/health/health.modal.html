@@ -1,0 +1,31 @@
+<div layout="row">
+    <div layout-padding>
+        <strong>Properties</strong>
+    </div>
+    <span flex></span>
+    <md-button class="md-icon-button" ng-click="vm.cancel()">
+        <i class="material-icons">close</i>
+    </md-button>
+</div>
+<div layout-padding>
+    <div ng-show="vm.currentHealth.details">
+        <table layout-fill>
+            <thead>
+                <tr>
+                    <th data-translate="health.details.name">Name</th>
+                    <th data-translate="health.details.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(k,v) in vm.currentHealth.details">
+                    <td>{{k}}</td>
+                    <td>{{v}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-show="vm.currentHealth.error">
+        <h4 data-translate="health.details.error">Error</h4>
+        <pre>{{vm.currentHealth.error}}</pre>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="m-common-toolbar">
+</div>
+<div class="m-common-panel md-whiteframe-1dp" layout="column" layout-align="center center">
+    <h2 data-translate="social.register.title" translate-values="{ label: vm.providerLabel }">Registration with</h2>
+    <div ng-show="vm.success" layout="column" layout-align="center center">
+        <div data-translate="social.register.messages.success" layout="column" layout-align="center center">
+            <p>
+                <strong>Registration saved!</strong>
+            </p>
+            <p>Please check your email for confirmation.</p>
+        </div>
+
+        <jh-social ng-provider="{{ vm.provider }}"></jh-social>
+
+    </div>
+
+    <div ng-show="vm.error" layout="column" layout-align="center center">
+        <div ng-show="vm.error" >
+            <strong class="error-text" data-translate="social.register.messages.error.fail">Registration failed! Please try again later</strong>
+            <p></p>
+             <div layout="row" layout-fill layout-align="center center">
+                <button type="button" class="m-common-google-btn" md-ink-ripple></button>
+                <button type="button" class="m-common-facebook-btn" md-ink-ripple></button>
+                <button type="button" class="m-common-twitter-btn" md-ink-ripple></button>
+            </div>
+        </div>
+
+    </div>
+</div>

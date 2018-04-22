@@ -1,0 +1,46 @@
+<md-card>
+    <md-card-content>
+        <p hide-xs class="md-title">Edit song page</p>
+        <form name="Form" layout-fill ng-submit="vm.submit()">
+            <md-input-container layout-fill>
+                <label>Title</label>
+                <input ng-model="vm.item.title" type="text" ng-required="true">
+            </md-input-container>
+            <md-input-container layout-fill>
+                <label>Artist</label>
+                <input ng-model="vm.item.artist" type="text" ng-required="true">
+            </md-input-container>
+            <md-radio-group ng-model="vm.stream">
+                <div layout="row" layout-align="left center">
+                    <md-radio-button flex="35" value="url" class="md-primary">URL</md-radio-button>
+                    <md-input-container flex layout-fill ng-show="vm.stream == 'url'">
+                        <label>File path</label>
+                        <input name="url" ng-model="vm.item.url" type="text" ng-required="true" aria-label="URl">
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="left center">
+                    <md-radio-button flex="35" value="upload" class="md-primary">Upload</md-radio-button>
+                    <md-input-container flex layout-fill ng-show="vm.stream == 'upload'">
+                        <input name="file" type="file" aria-label="Upload">
+                    </md-input-container>
+                </div>
+            </md-radio-group>
+            <md-input-container layout-fill layout="row">
+                <div>
+                    <button type="submit" aria-label="Add" class="md-button md-raised md-primary md-icon-button">
+                        <md-icon class="material-icons">add</md-icon>
+                    </button>
+                </div>
+                <div>
+                    <div layout="row" layout-align="left center" ng-repeat="item in vm.song.items">
+                        <md-button aria-label="delete" class="md-icon-button" ng-click="vm.deleteItem($index)">
+                            <md-icon class="material-icons"> clear</md-icon>
+                        </md-button>
+                        <span class="md-subhead m-1-line" flex>{{item.title}}</span>
+                    </div>
+                </div>
+            </md-input-container>
+
+        </form>
+    </md-card-content>
+</md-card>

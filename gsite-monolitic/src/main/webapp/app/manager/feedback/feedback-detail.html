@@ -1,0 +1,46 @@
+<div>
+    <md-button ui-sref="{{vm.previousState}}" class="md-raised md-primary" data-translate="global.form.back">Back</md-button>
+</div>
+<div>
+
+    <div class="m-content">
+        <h2 data-translate="feedback.info">Feedback infomation</h2>
+        <div layout-gt-xs="row">
+            <div flex>
+                <p>
+                    <span data-translate="global.form.id">ID</span> :
+                    <b>{{vm.feedback.id}}</b>
+                </p>
+                <p>
+                    <span data-translate="global.form.title">Title</span> :
+                    <b>{{vm.feedback.title}}</b>
+                </p>
+                <p>
+                    <span data-translate="feedback.content">Content</span> :
+                    <b>{{vm.feedback.content}}</b>
+                </p>
+
+            </div>
+            <div flex>
+                <p>
+                    <span data-translate="feedback.user">User </span> :
+                    <b>{{vm.feedback.user_id}}</b>
+                </p>
+
+                <p>
+                    <span data-translate="global.form.created">Created date</span> :
+                    <b>{{vm.feedback.created | date: 'medium'}}</b>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+    <p></p>
+
+
+</div>
+<div layout="row">
+    <md-button ui-sref="feedback.edit({id: vm.feedback.id})" class="md-raised md-primary" data-translate="global.form.edit">Edit</md-button>
+    <md-button ui-sref="feedback.delete({id: vm.feedback.id})" class="md-raised md-warn" data-translate="global.form.delete">Delete</md-button>
+</div>

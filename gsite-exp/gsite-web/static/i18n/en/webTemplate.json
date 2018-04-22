@@ -1,0 +1,12 @@
+{
+    "webTemplate": {
+        "title": "Web templates",
+        "name": "Name",
+        "rating": "Rating",
+        "category": "Category",
+        "template": "Template",
+        "date": "Date",
+        "price": "Price",
+        "info": "Web template information"
+    }
+}

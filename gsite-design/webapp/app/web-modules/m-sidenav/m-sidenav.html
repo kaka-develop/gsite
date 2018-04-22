@@ -1,0 +1,8 @@
+<md-sidenav class="md-sidenav-left m-sidenav" md-component-id="m-sidenav" md-whiteframe="4" style="background-color: {{vm.sidenav.backgroundColor}}; color: {{vm.sidenav.textColor}}">
+    <md-toolbar class="md-theme-indigo" style="background-color: {{vm.sidenav.barColor}}">
+        <h1 class="md-toolbar-tools">{{vm.sidenav.title}}</h1>
+    </md-toolbar>
+    <md-content>
+        <div ui-view="m-sidenav-list"></div>
+    </md-content>
+</md-sidenav>

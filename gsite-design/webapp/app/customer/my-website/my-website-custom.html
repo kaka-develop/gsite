@@ -1,0 +1,105 @@
+<div class="m-common-toolbar">
+</div>
+<div class="m-webcustom" layout-gt-xs="row" layout-align="center center">
+    <form name="Form" layout-padding class="white-bg" md-whiteframe="1">
+        <md-content class="md-no-momentum white-bg" layout-gt-sm="row">
+            <div flex>
+                <h2>Basic details</h2>
+                <md-input-container class="md-icon-float md-block">
+                    <md-icon aria-label="keyboard_arrow_down" class="material-icons">title</md-icon>
+                    <input name="name" ng-model="vm.website.name" type="text" placeholder="Title" minlength="2" ng-required="true">
+                    <div ng-messages="Form.name.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-icon-float md-block">
+                    <md-icon aria-label="keyboard_arrow_down" class="material-icons">link</md-icon>
+                    <label>Domain</label>
+                    <input type="text" name="domain" ng-model="vm.website.domain" ng-pattern="/^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/"
+                        required />
+                    <div ng-messages="Form.domain.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div flex class="mc-custom">
+                <h2>Customization</h2>
+                <div layout="row">
+                    <div flex>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.homepage.isEnable" aria-label="Toolbar">
+                                Home page
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.homepage.isEnable" ng-click="vm.customizeHomepage()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.basicinfo.isEnable" aria-label="Basic Info">
+                                Basic info
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.basicinfo.isEnable" ng-click="vm.customizeBasicInfo()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.song.isEnable" aria-label="Songs">
+                                Songs
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.song.isEnable" ng-click="vm.customizeSong()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.photo.isEnable" aria-label="Photos">
+                                Photos
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.photo.isEnable" ng-click="vm.customizePhoto()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                    <div flex>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.toolbar.isEnable" aria-label="Toolbar">
+                                Toolbar
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.toolbar.isEnable" ng-click="vm.customizeToolbar()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.sidenav.isEnable" aria-label="Toolbar">
+                                Sidenav
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.sidenav.isEnable" ng-click="vm.customizeSidenav()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center" ng-show="vm.website.custom.sidenav.isEnable">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.sidenav.list.isEnable" aria-label="Toolbar">
+                                Side list
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.sidenav.list.isEnable" ng-click="vm.customizeSidenavList()" aria-label="button-label"
+                                class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                        <div layout="row" layout-align="left center">
+                            <md-switch class="md-primary" ng-model="vm.website.custom.footer.isEnable" aria-label="Toolbar">
+                                Footer
+                            </md-switch>
+                            <md-button ng-show="vm.website.custom.footer.isEnable" ng-click="vm.customizeFooter()" aria-label="button-label" class="md-icon-button">
+                                <md-icon class="material-icons">edit</md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-content>
+        <div layout="row">
+            <md-button ng-disabled="!Form.$valid" ng-click="vm.submit()" class="md-raised md-primary">Save</md-button>
+            <md-button ui-sref="my-website" class="md-raised">Cancel</md-button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,117 @@
+{
+    "global": {
+        "title": "Gsite",
+        "menu": {
+            "home": "Home",
+            "des": {
+                "login": "Login and have fun!"
+            },
+            "template": "Templates",
+            "feature": "Features",
+            "admin": "Administration",
+            "manage": "Management",
+            "support": "Support",
+            "web": "My websites",
+            "noti": "My notifications",
+            "faq": {
+                "title": "FAQ",
+                "fulltitle": "Frequent asked questions"
+            },
+            "account": {
+                "main": "Account",
+                "settings": "Settings",
+                "password": "Password",
+                "sessions": "Sessions",
+                "login": "Sign in",
+                "logout": "Sign out",
+                "register": "Register"
+            },
+            "language": {
+                "eng": "English",
+                "vie": "Vietnamese"
+            },
+            "setting": "Settings"
+        },
+        "search": {
+            "placeholder": "Enter text"
+        },
+        "form": {
+            "username": "Username",
+            "password": "Password",
+            "confirmpassword": "Confirm password",
+            "email": "E-mail",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "language": "Language",
+            "des": "Description",
+            "age": "Age",
+            "title": "Title",
+            "name": "Name",
+            "fullName": "Full name",
+            "signup": "Sign up",
+            "login": "Login",
+            "logout": "Logout",
+            "error": {
+                "login": "Username or password is incorrect!",
+                "username": "More than 6 characters",
+                "password": "More than 8 characters",
+                "confirmpassword": "Match with the password",
+                "email": "Must be valid email",
+                "register": {
+                    "username": "Username is already existed!",
+                    "email": "Email is already existed!"
+                },
+                "domain": "yourdomain.gsite.com",
+                "title": "More than 3 characters",
+                "des": "More than 6 characters"
+            },
+            "reset": "Reset",
+            "cancel": "Cancel",
+            "save": "Save",
+            "send": "Send",
+            "id": "ID",
+            "created": "Created date",
+            "uploadImage": "Upload image",
+            "back": "Back",
+            "delete": "Delete",
+            "edit": "Edit"
+        },
+        "footer": {
+            "about": "About",
+            "faq": "FAQ",
+            "feedback": "Feedback",
+            "support": "Support"
+        },
+        "quicktool": {
+            "web": "Website",
+            "feedback": "Feedback",
+            "question": "Question"
+        },
+        "name": "name",
+        "des": "description",
+        "sortby": "Sort by",
+        "searchby": "Search by",
+        "date": "date",
+        "menubar": {
+            "faq": "FAQ",
+            "question": "question",
+            "feedback": "feedback",
+            "templates": "Templates",
+            "websites": "Websites",
+            "questions": "Questions",
+            "feedbacks": "Feedbacks",
+            "noti": "Notifications",
+            "users": "Users",
+            "metrics": "Metrics",
+            "health": "Health",
+            "api": "API",
+            "config": "Config",
+            "audits": "Audits",
+            "logs": "Logs"
+        },
+        "general": "General",
+        "noti": {
+            "delete": "You delete this {{ param }} ?"
+        }
+    }
+}

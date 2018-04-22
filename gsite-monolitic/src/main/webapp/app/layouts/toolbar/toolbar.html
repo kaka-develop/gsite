@@ -1,0 +1,82 @@
+<md-toolbar class="transparent m-toolbar" ng-show="!showSearch" md-whiteframe="3">
+    <div class="md-toolbar-tools">
+        <md-button hide-gt-md class="md-icon-button" aria-label="Settings" ng-click="vm.toggleSidenav()">
+            <md-icon class="material-icons">menu</md-icon>
+        </md-button>
+        <h2>
+            <a href="" ui-sref="home"><span>Gift Site</span></a>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Search" ng-click="showSearch = !showSearch; vm.search()">
+            <md-icon class="material-icons">search</md-icon>
+        </md-button>
+        <md-button hide-xs hide-sm ui-sref="my-website" class="md-icon-button" aria-label="My Websites" ng-show="vm.isAuthenticated()">
+            <md-icon class="material-icons">web</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Login" ng-click="vm.showLoginDialog()">
+            <md-icon class="material-icons">perm_identity</md-icon>
+        </md-button>
+        <md-menu hide-xs hide-sm md-offset="0 50">
+            <md-button aria-label="Choose language" class="md-icon-button" ng-mouseenter="$mdMenu.open()">
+                <md-icon class="material-icons">language</md-icon>
+            </md-button>
+            <md-menu-content width="3" ng-mouseleave="$mdCloseMenu()">
+                <md-menu-item ng-click="vm.changeEnglish()">
+                    <md-button data-translate="global.menu.language.eng" >
+                        English
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-click="vm.changeVietnam()">
+                    <md-button data-translate="global.menu.language.vie">
+                        Vietnamese
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>
+<md-toolbar class="transparent m-toolbar" ng-show="showSearch" md-whiteframe="3">
+    <div class="md-toolbar-tools">
+        <md-button hide-xs hide-gt-md class="md-icon-button" aria-label="Settings" ng-click="vm.toggleSidenav()">
+            <md-icon class="material-icons">menu</md-icon>
+        </md-button>
+        <h2 hide-xs>
+            <span>Gift Site</span>
+        </h2>
+        <md-button hide-gt-xs class="md-icon-button" ng-click="showSearch = !showSearch" aria-label="Back">
+            <i class="material-icons">arrow_back</i>
+        </md-button>
+        <span flex></span>
+        <form ng-submit="vm.search()">
+            <md-input-container md-theme="input" class="m-toolbar-search-box" md-no-float flex-xs="90">
+                <input id="searchInput" name="searchInput" placeholder="{{'global.search.placeholder' | translate}}" ng-model="vm.searchText">
+            </md-input-container>
+            <button class="md-button md-icon-button" aria-label="Search" type="submit">
+                <i class="material-icons">search</i>
+            </button>
+        </form>
+        <md-button hide-xs hide-sm ui-sref="my-website" class="md-icon-button" aria-label="My Websites"  ng-show="vm.isAuthenticated()">
+            <md-icon class="material-icons">web</md-icon>
+        </md-button>
+        <md-button hide-xs class="md-icon-button" aria-label="More" ng-click="vm.showLoginDialog()">
+            <md-icon class="material-icons">perm_identity</md-icon>
+        </md-button>
+        <md-menu hide-xs hide-sm md-offset="0 50">
+            <md-button aria-label="Open menu with custom trigger" class="md-icon-button" ng-mouseenter="$mdOpenMenu()">
+                <md-icon class="material-icons">language</md-icon>
+            </md-button>
+            <md-menu-content width="3" ng-mouseleave="$mdCloseMenu()">
+                <md-menu-item ng-click="vm.changeEnglish()">
+                    <md-button data-translate="global.menu.language.eng" >
+                        English
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-click="vm.changeVietnam()">
+                    <md-button data-translate="global.menu.language.vie">
+                        Vietnamese
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>

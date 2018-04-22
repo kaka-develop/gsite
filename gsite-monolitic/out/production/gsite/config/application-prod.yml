@@ -1,0 +1,65 @@
+
+spring:
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: gsite
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: giftsiteforyou@gmail.com
+        password: manchettoh8
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
+    thymeleaf:
+        cache: true
+
+server:
+    port: 8080
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+        min-response-size: 1024
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    http:
+        cache:
+            timeToLiveInDays: 1461
+    security:
+        rememberMe:
+            key: 44495d0671c035869e9a107b856e21f7be37e823
+    mail:
+        from: gsite@localhost
+        baseUrl: http://my-server-url-to-change
+    metrics:
+        jmx.enabled: true
+        graphite:
+            enabled: false
+            host: localhost
+            port: 2003
+            prefix: gsite
+        prometheus:
+            enabled: false
+            endpoint: /prometheusMetrics
+        logs:
+            enabled: false
+            reportFrequency: 60 # in seconds
+    logging:
+        logstash:
+            enabled: false
+            host: localhost
+            port: 5000
+            queueSize: 512

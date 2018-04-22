@@ -1,0 +1,9 @@
+{
+    "notification": {
+        "title": "Notifications",
+        "content": "Content",
+        "user": "User",
+        "info": "Notification information",
+        "sentUsers": "Sent users"
+    }
+}

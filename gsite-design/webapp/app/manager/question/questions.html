@@ -1,0 +1,42 @@
+<h2 data-translate="gsiteApp.question.home.title">Questions</h2>
+<div>
+    <table layout-fill>
+        <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                <th>
+                    <md-button ui-sref="question.new" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">add</i>
+                    </md-button>
+                </th>
+                <th hide-xs hide-gt-xs jh-sort-by="id"><span data-translate="global.field.id">ID</span> </th>
+                <th jh-sort-by="title"><span data-translate="gsiteApp.question.content">Title</span> </th>
+                <th hide-xs hide-sm jh-sort-by="answer"><span data-translate="gsiteApp.question.answer">Answer</span> </th>
+                <th hide-xs jh-sort-by="created"><span data-translate="gsiteApp.question.created">Created</span> </th>
+                <th hide-xs hide-gt-xs jh-sort-by="user_id"><span data-translate="gsiteApp.question.user_id">User Id</span> </th>
+
+            </tr>
+        </thead>
+        <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+            <tr ng-repeat="question in vm.questions track by question.id">
+                <td>
+                    <div class="m-item-actions" layout="row" layout-align="start center">
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-warn" ui-sref="question.delete({id: question.id})">
+                            <i class="material-icons">delete</i>
+                        </md-button>
+                        <md-button hide-xs hide-sm hide-md class="md-icon-button md-raised md-primary" ui-sref="question.edit({id: question.id})">
+                            <i class="material-icons">edit</i>
+                        </md-button>
+                        <md-button class="md-icon-button md-raised md-primary" ui-sref="question.detail({id:question.id})">
+                            <i class="material-icons">remove_red_eye</i>
+                        </md-button>
+                    </div>
+                </td>
+                <td hide-xs hide-gt-xs><a ui-sref="question-detail({id:question.id})">{{question.id}}</a></td>
+                <td>{{question.title}}</td>
+                <td hide-xs hide-sm>{{question.answer}}</td>
+                <td hide-xs>{{question.created | date:'medium'}}</td>
+                <td hide-xs hide-gt-xs>{{question.user_id}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
